@@ -1,0 +1,812 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+    /* Color Palette - Dark Mode (Default) */
+    --bg-main: #040814;
+    --bg-sidebar: #070e20;
+    --bg-card: rgba(13, 22, 47, 0.6);
+    --bg-card-hover: rgba(20, 32, 68, 0.7);
+    --border-color: rgba(0, 240, 255, 0.15);
+    --border-glow: rgba(0, 240, 255, 0.3);
+    
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    
+    --accent-blue: #00f0ff;
+    --accent-blue-rgb: 0, 240, 255;
+    --accent-purple: #8b5cf6;
+    
+    --color-safe: #10b981;
+    --color-safe-glow: rgba(16, 185, 129, 0.2);
+    --color-suspicious: #f59e0b;
+    --color-suspicious-glow: rgba(245, 158, 11, 0.2);
+    --color-dangerous: #ef4444;
+    --color-dangerous-glow: rgba(239, 68, 68, 0.2);
+
+    --shadow-neon: 0 0 15px rgba(0, 240, 255, 0.25);
+    --shadow-neon-strong: 0 0 25px rgba(0, 240, 255, 0.45);
+    
+    --glass-blur: blur(12px);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Light Mode Override Variables */
+body.light-theme {
+    --bg-main: #f0f4f9;
+    --bg-sidebar: #ffffff;
+    --bg-card: rgba(255, 255, 255, 0.75);
+    --bg-card-hover: rgba(255, 255, 255, 0.9);
+    --border-color: rgba(13, 110, 253, 0.15);
+    --border-glow: rgba(13, 110, 253, 0.3);
+    
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #94a3b8;
+    
+    --accent-blue: #0d6efd;
+    --accent-blue-rgb: 13, 110, 253;
+    
+    --color-safe: #0f9f6e;
+    --color-safe-glow: rgba(15, 159, 110, 0.15);
+    --color-suspicious: #d97706;
+    --color-suspicious-glow: rgba(217, 119, 6, 0.15);
+    --color-dangerous: #dc2626;
+    --color-dangerous-glow: rgba(220, 38, 38, 0.15);
+
+    --shadow-neon: 0 4px 20px rgba(13, 110, 253, 0.15);
+    --shadow-neon-strong: 0 8px 30px rgba(13, 110, 253, 0.25);
+    --border-color: rgba(13, 110, 253, 0.12);
+}
+
+/* Global Reset & Base */
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: 'Outfit', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    transition: var(--transition-smooth);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--border-glow);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-blue);
+}
+
+/* Background Cyber Grid effect */
+.cyber-grid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(0, 240, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 240, 255, 0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: -2;
+    pointer-events: none;
+}
+
+body.light-theme .cyber-grid {
+    background-image: 
+        linear-gradient(rgba(13, 110, 253, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(13, 110, 253, 0.02) 1px, transparent 1px);
+}
+
+/* Radial Glows */
+.cyber-glow-1 {
+    position: fixed;
+    top: -10%;
+    right: -10%;
+    width: 50vw;
+    height: 50vw;
+    background: radial-gradient(circle, rgba(0, 240, 255, 0.08) 0%, transparent 70%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.cyber-glow-2 {
+    position: fixed;
+    bottom: -10%;
+    left: -10%;
+    width: 50vw;
+    height: 50vw;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.05) 0%, transparent 70%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Header & Navigation */
+.navbar {
+    background: var(--bg-sidebar);
+    border-bottom: 1px solid var(--border-color);
+    backdrop-filter: var(--glass-blur);
+    padding: 0.8rem 1.5rem;
+    transition: var(--transition-smooth);
+}
+
+.navbar-brand {
+    font-weight: 800;
+    color: var(--text-primary) !important;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+.navbar-brand span {
+    background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-link {
+    color: var(--text-secondary) !important;
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    border-radius: 8px;
+    transition: var(--transition-smooth);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--accent-blue) !important;
+    background: rgba(0, 240, 255, 0.06);
+    box-shadow: inset 0 0 1px rgba(0, 240, 255, 0.2);
+}
+
+body.light-theme .nav-link:hover, body.light-theme .nav-link.active {
+    color: var(--accent-blue) !important;
+    background: rgba(13, 110, 253, 0.08);
+}
+
+/* Neon buttons */
+.btn-cyber-primary {
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.25) 0%, rgba(139, 92, 246, 0.25) 100%);
+    border: 1px solid var(--accent-blue);
+    color: var(--text-primary);
+    font-weight: 600;
+    padding: 0.6rem 1.5rem;
+    border-radius: 8px;
+    transition: var(--transition-smooth);
+    box-shadow: var(--shadow-neon);
+}
+
+.btn-cyber-primary:hover {
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.45) 0%, rgba(139, 92, 246, 0.45) 100%);
+    border-color: var(--accent-blue);
+    color: var(--text-primary);
+    box-shadow: var(--shadow-neon-strong);
+    transform: translateY(-2px);
+}
+
+.btn-cyber-outline {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    font-weight: 600;
+    padding: 0.6rem 1.5rem;
+    border-radius: 8px;
+    transition: var(--transition-smooth);
+}
+
+.btn-cyber-outline:hover {
+    background: rgba(0, 240, 255, 0.05);
+    border-color: var(--accent-blue);
+    color: var(--accent-blue);
+    transform: translateY(-2px);
+}
+
+/* Glassmorphism Cards */
+.cyber-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.5rem;
+    backdrop-filter: var(--glass-blur);
+    transition: var(--transition-smooth);
+}
+
+.cyber-card:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--border-glow);
+    box-shadow: 0 8px 32px 0 rgba(0, 240, 255, 0.08);
+    transform: translateY(-2px);
+}
+
+.cyber-card-glow {
+    border-color: var(--border-glow);
+    box-shadow: var(--shadow-neon);
+}
+
+.cyber-card-glow:hover {
+    box-shadow: var(--shadow-neon-strong);
+}
+
+/* Input Fields styling */
+.cyber-input-group {
+    background: rgba(2, 4, 10, 0.5);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 0.4rem;
+    display: flex;
+    align-items: center;
+    transition: var(--transition-smooth);
+}
+
+.cyber-input-group:focus-within {
+    border-color: var(--accent-blue);
+    box-shadow: var(--shadow-neon);
+}
+
+.cyber-input {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    padding: 0.6rem 1rem;
+    flex: 1;
+    font-size: 1.1rem;
+}
+
+.cyber-input:focus {
+    outline: none;
+}
+
+.cyber-input::placeholder {
+    color: var(--text-muted);
+}
+
+/* Risk Score Results Styling */
+.result-card {
+    border-radius: 16px;
+    padding: 2rem;
+    margin-top: 2rem;
+    border: 1px solid transparent;
+    backdrop-filter: var(--glass-blur);
+    transition: var(--transition-smooth);
+    animation: fadeIn 0.5s ease-out;
+}
+
+.result-card.safe {
+    background: rgba(16, 185, 129, 0.08);
+    border-color: rgba(16, 185, 129, 0.3);
+    box-shadow: 0 0 25px rgba(16, 185, 129, 0.15);
+}
+
+.result-card.suspicious {
+    background: rgba(245, 158, 11, 0.08);
+    border-color: rgba(245, 158, 11, 0.3);
+    box-shadow: 0 0 25px rgba(245, 158, 11, 0.15);
+}
+
+.result-card.dangerous {
+    background: rgba(239, 68, 68, 0.08);
+    border-color: rgba(239, 68, 68, 0.3);
+    box-shadow: 0 0 25px rgba(239, 68, 68, 0.15);
+}
+
+/* Risk Meter & Progress Bar */
+.risk-meter-container {
+    position: relative;
+    width: 100%;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 1.5rem 0;
+}
+
+.risk-meter-bar {
+    height: 100%;
+    width: 0%;
+    border-radius: 6px;
+    transition: width 1.2s cubic-bezier(0.1, 0.8, 0.3, 1);
+}
+
+.result-card.safe .risk-meter-bar {
+    background: linear-gradient(90deg, #059669, #10b981);
+    box-shadow: 0 0 10px var(--color-safe);
+}
+
+.result-card.suspicious .risk-meter-bar {
+    background: linear-gradient(90deg, #d97706, #f59e0b);
+    box-shadow: 0 0 10px var(--color-suspicious);
+}
+
+.result-card.dangerous .risk-meter-bar {
+    background: linear-gradient(90deg, #dc2626, #ef4444);
+    box-shadow: 0 0 10px var(--color-dangerous);
+}
+
+/* Scan detail checklist items */
+.checklist-item {
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checklist-item.pass {
+    border-left: 4px solid var(--color-safe);
+}
+.checklist-item.warning {
+    border-left: 4px solid var(--color-suspicious);
+}
+.checklist-item.fail {
+    border-left: 4px solid var(--color-dangerous);
+}
+
+.checklist-item .badge {
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+}
+
+/* Dashboard Statistics Widgets */
+.stat-widget {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.stat-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.stat-icon.total {
+    background: rgba(0, 240, 255, 0.1);
+    color: var(--accent-blue);
+    border: 1px solid rgba(0, 240, 255, 0.25);
+}
+
+.stat-icon.safe {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--color-safe);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.stat-icon.suspicious {
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--color-suspicious);
+    border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.stat-icon.dangerous {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--color-dangerous);
+    border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+/* Styled Table for Logs */
+.cyber-table-container {
+    overflow-x: auto;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.cyber-table {
+    width: 100%;
+    margin-bottom: 0;
+    color: var(--text-primary);
+    border-collapse: collapse;
+}
+
+.cyber-table th {
+    background: rgba(7, 14, 32, 0.9);
+    padding: 1rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.cyber-table td {
+    padding: 1rem;
+    background: rgba(13, 22, 47, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.95rem;
+    vertical-align: middle;
+}
+
+.cyber-table tr:hover td {
+    background: rgba(20, 32, 68, 0.5);
+}
+
+/* Safe/Suspicious/Dangerous Badges */
+.badge-safe {
+    background: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.badge-suspicious {
+    background: rgba(245, 158, 11, 0.15);
+    color: #fbbf24;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.badge-dangerous {
+    background: rgba(239, 68, 68, 0.15);
+    color: #fca5a5;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* Toast Notifications */
+.toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1060;
+}
+
+.cyber-toast {
+    background: var(--bg-sidebar);
+    border: 1px solid var(--border-glow);
+    border-radius: 8px;
+    color: var(--text-primary);
+    backdrop-filter: var(--glass-blur);
+    box-shadow: var(--shadow-neon);
+    min-width: 300px;
+    display: none;
+    animation: slideIn 0.3s cubic-bezier(0.1, 0.8, 0.3, 1);
+}
+
+.cyber-toast.show {
+    display: block;
+}
+
+.cyber-toast-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.cyber-toast-body {
+    padding: 0.8rem 1rem;
+}
+
+/* Loading Scanning Animation */
+.loading-scan {
+    display: none;
+    text-align: center;
+    padding: 2.5rem;
+    border-radius: 16px;
+    background: rgba(13, 22, 47, 0.4);
+    border: 1px dashed var(--border-glow);
+    margin-top: 2rem;
+}
+
+.scanner-radar {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 240, 255, 0.2);
+    margin: 0 auto 1.5rem auto;
+    overflow: hidden;
+}
+
+.scanner-radar::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, var(--accent-blue) 0%, transparent 40%, transparent 100%);
+    transform-origin: 0 0;
+    animation: rotate-conic 2s linear infinite;
+    top: 0;
+    left: 0;
+}
+
+.scanner-radar::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent-blue);
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px var(--accent-blue);
+}
+
+/* Theme Switch toggle */
+.theme-switch-btn {
+    cursor: pointer;
+    font-size: 1.2rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    transition: var(--transition-smooth);
+}
+
+.theme-switch-btn:hover {
+    color: var(--accent-blue);
+    border-color: var(--accent-blue);
+    background: rgba(0, 240, 255, 0.05);
+}
+
+/* About page guide boxes */
+.cyber-guide-box {
+    border-left: 3px solid var(--accent-blue);
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Footer style */
+footer {
+    background: var(--bg-sidebar);
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    padding: 1.5rem 0;
+    margin-top: auto;
+    font-size: 0.9rem;
+    backdrop-filter: var(--glass-blur);
+    transition: var(--transition-smooth);
+}
+
+footer a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+footer a:hover {
+    color: var(--accent-blue);
+}
+
+/* Animations */
+@keyframes rotate-conic {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+    .cyber-card {
+        padding: 1.2rem;
+    }
+    .navbar-brand {
+        font-size: 1.15rem;
+    }
+    .nav-link {
+        padding: 0.4rem 0.8rem !important;
+    }
+    .stat-widget {
+        gap: 0.8rem;
+    }
+    .stat-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 1.2rem;
+    }
+}
+
+/* Circular Risk Meter styling */
+.circular-risk-meter {
+    position: relative;
+    width: 170px;
+    height: 170px;
+    margin: 0 auto 1.5rem auto;
+}
+
+.circular-risk-meter svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.circular-risk-meter circle {
+    fill: none;
+    stroke-width: 8;
+}
+
+.circular-risk-meter .bg-circle {
+    stroke: rgba(255, 255, 255, 0.05);
+}
+
+.circular-risk-meter .fg-circle {
+    stroke-dasharray: 282.7; /* 2 * pi * r (r=45) */
+    stroke-dashoffset: 282.7;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 1.2s cubic-bezier(0.1, 0.8, 0.3, 1), stroke 0.3s ease;
+}
+
+body.light-theme .circular-risk-meter .bg-circle {
+    stroke: rgba(0, 0, 0, 0.05);
+}
+
+/* Circular meter color codes & glows */
+.circular-risk-meter.safe .fg-circle {
+    stroke: var(--color-safe);
+    filter: drop-shadow(0 0 6px var(--color-safe));
+}
+
+.circular-risk-meter.suspicious .fg-circle {
+    stroke: var(--color-suspicious);
+    filter: drop-shadow(0 0 6px var(--color-suspicious));
+}
+
+.circular-risk-meter.dangerous .fg-circle {
+    stroke: var(--color-dangerous);
+    filter: drop-shadow(0 0 6px var(--color-dangerous));
+}
+
+.circular-risk-meter .meter-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.circular-risk-meter .meter-score {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1;
+}
+
+.circular-risk-meter .meter-rating {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 4px;
+}
+
+.circular-risk-meter.safe .meter-rating {
+    color: var(--color-safe);
+}
+
+.circular-risk-meter.suspicious .meter-rating {
+    color: var(--color-suspicious);
+}
+
+.circular-risk-meter.dangerous .meter-rating {
+    color: var(--color-dangerous);
+}
+
+/* Modernized result layout spacing & styling */
+.result-meta-card {
+    background: rgba(13, 22, 47, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+body.light-theme .result-meta-card {
+    background: rgba(255, 255, 255, 0.5);
+    border-color: rgba(0, 0, 0, 0.05);
+}
+
+.result-explanation-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.explanation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+.explanation-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    gap: 0.75rem;
+    transition: var(--transition-smooth);
+}
+
+body.light-theme .explanation-card {
+    background: rgba(0, 0, 0, 0.02);
+    border-color: rgba(0, 0, 0, 0.04);
+}
+
+.explanation-card:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: var(--border-glow);
+    transform: translateY(-2px);
+}
+
+body.light-theme .explanation-card:hover {
+    background: rgba(0, 0, 0, 0.04);
+}
+
+.explanation-card-icon {
+    font-size: 1.25rem;
+    margin-top: 2px;
+}
+
+.explanation-card-content {
+    flex: 1;
+}
+
+.explanation-card-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 2px;
+    color: var(--text-primary);
+}
+
+.explanation-card-desc {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.35;
+}
+

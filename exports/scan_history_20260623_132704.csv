@@ -1,0 +1,5 @@
+ID,URL,Hostname,Risk Score (%),Category,Timestamp
+d1b429cd-57f0-45ed-be68-ce664a98dc5b,https://secure-login-bank-verify.com,secure-login-bank-verify.com,65,Suspicious,2026-06-23 13:11:32
+6d6ebc6c-1302-4f1f-a41b-2c3bc95a4dc0,ghanchizaid205@gmail.com,ghanchizaid205@gmail.com,50,Suspicious,2026-06-23 13:09:52
+56067914-10b1-48f6-88ff-c200f2af33f5,https://google.com,google.com,0,Safe,2026-06-23 13:03:38
+9dc98f4f-e698-486c-bbfa-3f633c90922b,https://google.com,google.com,0,Safe,2026-06-23 12:58:41

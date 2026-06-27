@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional AI-powered phishing website detector with deep cybersecurity heuristic scanning.">
+    <title>{% block title %}Phishing Website Detector{% endblock %} - CyberSecurity Portal</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Font & Custom Style -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    <!-- Chart.js (Loaded only if dashboard block requires it, but safe to include globally) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <!-- Background grid & glows -->
+    <div class="cyber-grid"></div>
+    <div class="cyber-glow-1"></div>
+    <div class="cyber-glow-2"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('index') }}">
+                <i class="fas fa-shield-virus text-info"></i>
+                <span>PHISH<span>GUARD</span></span>
+            </a>
+            <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{{ url_for('index') }}">
+                            <i class="fas fa-search"></i> Scanner
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/dashboard' %}active{% endif %}" href="{{ url_for('dashboard') }}">
+                            <i class="fas fa-chart-pie"></i> Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/history' %}active{% endif %}" href="{{ url_for('history') }}">
+                            <i class="fas fa-history"></i> History
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/about' %}active{% endif %}" href="{{ url_for('about') }}">
+                            <i class="fas fa-info-circle"></i> Educational Guide
+                        </a>
+                    </li>
+                    <li class="nav-item ms-lg-2">
+                        <div id="theme-toggle-btn" class="theme-switch-btn" title="Toggle Dark/Light Mode">
+                            <i class="fas fa-moon"></i>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <main class="container my-5 flex-grow-1">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Global Toast Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Footer -->
+    <footer class="text-center py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4 text-md-start mb-3 mb-md-0">
+                    <p class="mb-0">&copy; 2026 PhishGuard - Cybersecurity Heuristics Initiative.</p>
+                </div>
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    <div class="d-flex flex-column flex-md-row justify-content-center gap-2 gap-md-3 text-secondary small font-monospace">
+                        <span><i class="fas fa-code me-1 text-info"></i>Developed by Zaid Ghanchi</span>
+                        <span class="d-none d-md-inline text-muted">|</span>
+                        <span><i class="fas fa-cog me-1 text-info"></i>Version 1.0</span>
+                        <span class="d-none d-md-inline text-muted">|</span>
+                        <span><i class="fas fa-graduation-cap me-1 text-info"></i>Cyber Security Project</span>
+                    </div>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <a href="{{ url_for('about') }}" class="me-3"><i class="fas fa-graduation-cap me-1"></i>Education Portal</a>
+                    <a href="https://github.com" target="_blank"><i class="fab fa-github me-1"></i>GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

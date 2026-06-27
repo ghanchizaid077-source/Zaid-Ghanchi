@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %}History - Security Scan Log{% endblock %}
+
+{% block content %}
+<div class="row mb-4 align-items-center">
+    <div class="col-md-6 mb-3 mb-md-0">
+        <h1 class="h2 fw-bold"><i class="fas fa-history me-2 text-info"></i>Scan Audit Trail</h1>
+        <p class="text-secondary mb-0">Browse, filter, and export the database of scanned websites and threat metrics.</p>
+    </div>
+    <div class="col-md-6 d-flex flex-wrap justify-content-md-end gap-2">
+        <a href="/api/history/export" class="btn btn-cyber-primary">
+            <i class="fas fa-file-csv me-2"></i>Export to CSV
+        </a>
+        <button id="clear-history-btn" class="btn btn-outline-danger">
+            <i class="fas fa-trash-alt me-2"></i>Clear All Data
+        </button>
+    </div>
+</div>
+
+<!-- Filter and search card -->
+<div class="cyber-card p-3 mb-4 shadow">
+    <div class="row align-items-center">
+        <div class="col-md-6 mb-3 mb-md-0">
+            <div class="cyber-input-group py-1 px-2">
+                <span class="text-secondary"><i class="fas fa-search"></i></span>
+                <input type="text" id="search-input" class="cyber-input py-1" placeholder="Search by URL, hostname, or safety category...">
+            </div>
+        </div>
+        <div class="col-md-6 text-md-end text-secondary small">
+            <span>Filter logic executes in real-time on client side database cache.</span>
+        </div>
+    </div>
+</div>
+
+<!-- History Log Table -->
+<div class="cyber-card shadow p-0">
+    <div class="cyber-table-container">
+        <table class="cyber-table text-center">
+            <thead>
+                <tr>
+                    <th style="width: 60px;">#</th>
+                    <th class="text-start">Scanned URL</th>
+                    <th>Risk Score</th>
+                    <th>Safety Rating</th>
+                    <th>Audit Date & Time</th>
+                    <th>Operations</th>
+                </tr>
+            </thead>
+            <tbody id="history-table-body">
+                <tr>
+                    <td colspan="6" class="text-center text-secondary py-5">
+                        <i class="fas fa-database fa-spin fa-2x mb-3 text-info"></i>
+                        <p class="mb-0">Syncing with history logs database...</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

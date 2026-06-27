@@ -1,0 +1,922 @@
+[
+    {
+        "id": "f4aee908-41ca-496f-bac9-f95efc05266d",
+        "url": "https://openai.com⁠",
+        "hostname": "openai.com⁠",
+        "risk_score": 0,
+        "category": "Safe",
+        "details": [
+            {
+                "check": "HTTPS Availability",
+                "status": "pass",
+                "message": "Website uses secure HTTPS encryption.",
+                "impact": 0
+            },
+            {
+                "check": "URL Length",
+                "status": "pass",
+                "message": "URL length is safe (19 chars).",
+                "impact": 0
+            },
+            {
+                "check": "IP Address in Domain",
+                "status": "pass",
+                "message": "Hostname is a registered domain name (not an IP address).",
+                "impact": 0
+            },
+            {
+                "check": "Presence of \"@\" Symbol",
+                "status": "pass",
+                "message": "No \"@\" symbol detected in the URL.",
+                "impact": 0
+            },
+            {
+                "check": "Subdomain Count",
+                "status": "pass",
+                "message": "Subdomain count is in normal range.",
+                "impact": 0
+            },
+            {
+                "check": "Suspicious Keywords",
+                "status": "pass",
+                "message": "No typical phishing keywords found.",
+                "impact": 0
+            },
+            {
+                "check": "Shortening Service",
+                "status": "pass",
+                "message": "Not using a known URL shortening service.",
+                "impact": 0
+            },
+            {
+                "check": "Domain Hyphenation",
+                "status": "pass",
+                "message": "Domain name does not contain hyphens.",
+                "impact": 0
+            },
+            {
+                "check": "Top-Level Domain (TLD) Safety",
+                "status": "pass",
+                "message": "Website uses a standard or highly trusted top-level domain.",
+                "impact": 0
+            },
+            {
+                "check": "Special Characters",
+                "status": "pass",
+                "message": "No suspicious special characters detected in the URL.",
+                "impact": 0
+            }
+        ],
+        "timestamp": "2026-06-27 15:20:49"
+    },
+    {
+        "id": "46f1c2d9-846f-4787-8d5c-b838709a0cdd",
+        "url": "https://github.com",
+        "hostname": "github.com",
+        "risk_score": 0,
+        "category": "Safe",
+        "details": [
+            {
+                "check": "HTTPS Availability",
+                "status": "pass",
+                "message": "Website uses secure HTTPS encryption.",
+                "impact": 0
+            },
+            {
+                "check": "URL Length",
+                "status": "pass",
+                "message": "URL length is safe (18 chars).",
+                "impact": 0
+            },
+            {
+                "check": "IP Address in Domain",
+                "status": "pass",
+                "message": "Hostname is a registered domain name (not an IP address).",
+                "impact": 0
+            },
+            {
+                "check": "Presence of \"@\" Symbol",
+                "status": "pass",
+                "message": "No \"@\" symbol detected in the URL.",
+                "impact": 0
+            },
+            {
+                "check": "Subdomain Count",
+                "status": "pass",
+                "message": "Subdomain count is in normal range.",
+                "impact": 0
+            },
+            {
+                "check": "Suspicious Keywords",
+                "status": "pass",
+                "message": "No typical phishing keywords found.",
+                "impact": 0
+            },
+            {
+                "check": "Shortening Service",
+                "status": "pass",
+                "message": "Not using a known URL shortening service.",
+                "impact": 0
+            },
+            {
+                "check": "Domain Hyphenation",
+                "status": "pass",
+                "message": "Domain name does not contain hyphens.",
+                "impact": 0
+            },
+            {
+                "check": "Top-Level Domain (TLD) Safety",
+                "status": "pass",
+                "message": "Website uses a standard or highly trusted top-level domain.",
+                "impact": 0
+            },
+            {
+                "check": "Special Characters",
+                "status": "pass",
+                "message": "No suspicious special characters detected in the URL.",
+                "impact": 0
+            }
+        ],
+        "timestamp": "2026-06-27 15:20:31"
+    },
+    {
+        "id": "63a45238-98ab-4543-a2ab-a1247ed53b65",
+        "url": "https://google.com",
+        "hostname": "google.com",
+        "risk_score": 0,
+        "category": "Safe",
+        "details": [
+            {
+                "check": "HTTPS Availability",
+                "status": "pass",
+                "message": "Website uses secure HTTPS encryption.",
+                "impact": 0
+            },
+            {
+                "check": "URL Length",
+                "status": "pass",
+                "message": "URL length is safe (18 chars).",
+                "impact": 0
+            },
+            {
+                "check": "IP Address in Domain",
+                "status": "pass",
+                "message": "Hostname is a registered domain name (not an IP address).",
+                "impact": 0
+            },
+            {
+                "check": "Presence of \"@\" Symbol",
+                "status": "pass",
+                "message": "No \"@\" symbol detected in the URL.",
+                "impact": 0
+            },
+            {
+                "check": "Subdomain Count",
+                "status": "pass",
+                "message": "Subdomain count is in normal range.",
+                "impact": 0
+            },
+            {
+                "check": "Suspicious Keywords",
+                "status": "pass",
+                "message": "No typical phishing keywords found.",
+                "impact": 0
+            },
+            {
+                "check": "Shortening Service",
+                "status": "pass",
+                "message": "Not using a known URL shortening service.",
+                "impact": 0
+            },
+            {
+                "check": "Domain Hyphenation",
+                "status": "pass",
+                "message": "Domain name does not contain hyphens.",
+                "impact": 0
+            },
+            {
+                "check": "Top-Level Domain (TLD) Safety",
+                "status": "pass",
+                "message": "Website uses a standard or highly trusted top-level domain.",
+                "impact": 0
+            },
+            {
+                "check": "Special Characters",
+                "status": "pass",
+                "message": "No suspicious special characters detected in the URL.",
+                "impact": 0
+            }
+        ],
+        "timestamp": "2026-06-27 15:20:08"
+    },
+    {
+        "id": "26f3181a-175b-4f0f-a3a0-71c39180d925",
+        "url": "https://google.com",
+        "hostname": "google.com",
+        "risk_score": 0,
+        "category": "Safe",
+        "details": [
+            {
+                "check": "HTTPS Availability",
+                "status": "pass",
+                "message": "Website uses secure HTTPS encryption.",
+                "impact": 0
+            },
+            {
+                "check": "URL Length",
+                "status": "pass",
+                "message": "URL length is safe (18 chars).",
+                "impact": 0
+            },
+            {
+                "check": "IP Address in Domain",
+                "status": "pass",
+                "message": "Hostname is a registered domain name (not an IP address).",
+                "impact": 0
+            },
+            {
+                "check": "Presence of \"@\" Symbol",
+                "status": "pass",
+                "message": "No \"@\" symbol detected in the URL.",
+                "impact": 0
+            },
+            {
+                "check": "Subdomain Count",
+                "status": "pass",
+                "message": "Subdomain count is in normal range.",
+                "impact": 0
+            },
+            {
+                "check": "Suspicious Keywords",
+                "status": "pass",
+                "message": "No typical phishing keywords found.",
+                "impact": 0
+            },
+            {
+                "check": "Shortening Service",
+                "status": "pass",
+                "message": "Not using a known URL shortening service.",
+                "impact": 0
+            },
+            {
+                "check": "Domain Hyphenation",
+                "status": "pass",
+                "message": "Domain name does not contain hyphens.",
+                "impact": 0
+            },
+            {
+                "check": "Top-Level Domain (TLD) Safety",
+                "status": "pass",
+                "message": "Website uses a standard or highly trusted top-level domain.",
+                "impact": 0
+            },
+            {
+                "check": "Special Characters",
+                "status": "pass",
+                "message": "No suspicious special characters detected in the URL.",
+                "impact": 0
+            }
+        ],
+        "timestamp": "2026-06-27 15:18:18"
+    },
+    {
+        "id": "5049c93d-c047-4cc7-8fbc-4996503faf68",
+        "url": "https.amaZon.com",
+        "hostname": "https.amaZon.com",
+        "risk_score": 25,
+        "category": "Safe",
+        "details": [
+            {
+                "check": "HTTPS Availability",
+                "status": "fail",
+                "message": "Website does not use HTTPS encryption (HTTP is insecure).",
+                "impact": 25
+            },
+            {
+                "check": "URL Length",
+                "status": "pass",
+                "message": "URL length is safe (16 chars).",
+                "impact": 0
+            },
+            {
+                "check": "IP Address in Domain",
+                "status": "pass",
+                "message": "Hostname is a registered domain name (not an IP address).",
+                "impact": 0
+            },
+            {
+                "check": "Presence of \"@\" Symbol",
+                "status": "pass",
+                "message": "No \"@\" symbol detected in the URL.",
+                "impact": 0
+            },
+            {
+                "check": "Subdomain Count",
+                "status": "pass",
+                "message": "Subdomain count is in normal range.",
+                "impact": 0
+            },
+            {
+                "check": "Suspicious Keywords",
+                "status": "pass",
+                "message": "No typical phishing keywords found.",
+                "impact": 0
+            },
+            {
+                "check": "Shortening Service",
+                "status": "pass",
+                "message": "Not using a known URL shortening service.",
+                "impact": 0
+            },
+            {
+                "check": "Domain Hyphenation",
+                "status": "pass",
+                "message": "Domain name does not contain hyphens.",
+                "impact": 0
+            },
+            {
+                "check": "Top-Level Domain (TLD) Safety",
+                "status": "pass",
+                "message": "Website uses a standard or highly trusted top-level domain.",
+                "impact": 0
+            }
+        ],
+        "timestamp": "2026-06-27 14:35:39"
+    },
+    {
+        "id": "3c5928a7-d7cc-428f-ab5e-95f52c0be7f3",
+        "url": "https.amazom.com",
+        "hostname": "https.amazom.com",
+        "risk_score": 25,
+        "category": "Safe",
+        "details": [
+            {
+                "check": "HTTPS Availability",
+                "status": "fail",
+                "message": "Website does not use HTTPS encryption (HTTP is insecure).",
+                "impact": 25
+            },
+            {
+                "check": "URL Length",
+                "status": "pass",
+                "message": "URL length is safe (16 chars).",
+                "impact": 0
+            },
+            {
+                "check": "IP Address in Domain",
+                "status": "pass",
+                "message": "Hostname is a registered domain name (not an IP address).",
+                "impact": 0
+            },
+            {
+                "check": "Presence of \"@\" Symbol",
+                "status": "pass",
+                "message": "No \"@\" symbol detected in the URL.",
+                "impact": 0
+            },
+            {
+                "check": "Subdomain Count",
+                "status": "pass",
+                "message": "Subdomain count is in normal range.",
+                "impact": 0
+            },
+            {
+                "check": "Suspicious Keywords",
+                "status": "pass",
+                "message": "No typical phishing keywords found.",
+                "impact": 0
+            },
+            {
+                "check": "Shortening Service",
+                "status": "pass",
+                "message": "Not using a known URL shortening service.",
+                "impact": 0
+            },
+            {
+                "check": "Domain Hyphenation",
+                "status": "pass",
+                "message": "Domain name does not contain hyphens.",
+                "impact": 0
+            },
+            {
+                "check": "Top-Level Domain (TLD) Safety",
+                "status": "pass",
+                "message": "Website uses a standard or highly trusted top-level domain.",
+                "impact": 0
+            }
+        ],
+        "timestamp": "2026-06-23 20:05:47"
+    },
+    {
+        "id": "82ac7fbf-9a72-4671-a2a3-1b40370cf03f",
+        "url": "http://app.coolapp.io/contact",
+        "hostname": "app.coolapp.io",
+        "risk_score": 25,
+        "category": "Safe",
+        "details": [
+            {
+                "check": "HTTPS Availability",
+                "status": "fail",
+                "message": "Website does not use HTTPS encryption (HTTP is insecure).",
+                "impact": 25
+            },
+            {
+                "check": "URL Length",
+                "status": "pass",
+                "message": "URL length is safe (29 chars).",
+                "impact": 0
+            },
+            {
+                "check": "IP Address in Domain",
+                "status": "pass",
+                "message": "Hostname is a registered domain name (not an IP address).",
+                "impact": 0
+            },
+            {
+                "check": "Presence of \"@\" Symbol",
+                "status": "pass",
+                "message": "No \"@\" symbol detected in the URL.",
+                "impact": 0
+            },
+            {
+                "check": "Subdomain Count",
+                "status": "pass",
+                "message": "Subdomain count is in normal range.",
+                "impact": 0
+            },
+            {
+                "check": "Suspicious Keywords",
+                "status": "pass",
+                "message": "No typical phishing keywords found.",
+                "impact": 0
+            },
+            {
+                "check": "Shortening Service",
+                "status": "pass",
+                "message": "Not using a known URL shortening service.",
+                "impact": 0
+            },
+            {
+                "check": "Domain Hyphenation",
+                "status": "pass",
+                "message": "Domain name does not contain hyphens.",
+                "impact": 0
+            },
+            {
+                "check": "Top-Level Domain (TLD) Safety",
+                "status": "pass",
+                "message": "Website uses a standard or highly trusted top-level domain.",
+                "impact": 0
+            }
+        ],
+        "timestamp": "2026-06-23 13:32:12"
+    },
+    {
+        "id": "6a6e6d1d-7828-4df3-848f-d00b9d395c28",
+        "url": "http://www.testsite.dev/dashboard",
+        "hostname": "www.testsite.dev",
+        "risk_score": 25,
+        "category": "Safe",
+        "details": [
+            {
+                "check": "HTTPS Availability",
+                "status": "fail",
+                "message": "Website does not use HTTPS encryption (HTTP is insecure).",
+                "impact": 25
+            },
+            {
+                "check": "URL Length",
+                "status": "pass",
+                "message": "URL length is safe (33 chars).",
+                "impact": 0
+            },
+            {
+                "check": "IP Address in Domain",
+                "status": "pass",
+                "message": "Hostname is a registered domain name (not an IP address).",
+                "impact": 0
+            },
+            {
+                "check": "Presence of \"@\" Symbol",
+                "status": "pass",
+                "message": "No \"@\" symbol detected in the URL.",
+                "impact": 0
+            },
+            {
+                "check": "Subdomain Count",
+                "status": "pass",
+                "message": "Subdomain count is in normal range.",
+                "impact": 0
+            },
+            {
+                "check": "Suspicious Keywords",
+                "status": "pass",
+                "message": "No typical phishing keywords found.",
+                "impact": 0
+            },
+            {
+                "check": "Shortening Service",
+                "status": "pass",
+                "message": "Not using a known URL shortening service.",
+                "impact": 0
+            },
+            {
+                "check": "Domain Hyphenation",
+                "status": "pass",
+                "message": "Domain name does not contain hyphens.",
+                "impact": 0
+            },
+            {
+                "check": "Top-Level Domain (TLD) Safety",
+                "status": "pass",
+                "message": "Website uses a standard or highly trusted top-level domain.",
+                "impact": 0
+            }
+        ],
+        "timestamp": "2026-06-23 13:31:07"
+    },
+    {
+        "id": "e4acbcaa-d597-4144-963e-0ed395ede6c3",
+        "url": "https://blog.mywebsite.dev/home",
+        "hostname": "blog.mywebsite.dev",
+        "risk_score": 0,
+        "category": "Safe",
+        "details": [
+            {
+                "check": "HTTPS Availability",
+                "status": "pass",
+                "message": "Website uses secure HTTPS encryption.",
+                "impact": 0
+            },
+            {
+                "check": "URL Length",
+                "status": "pass",
+                "message": "URL length is safe (31 chars).",
+                "impact": 0
+            },
+            {
+                "check": "IP Address in Domain",
+                "status": "pass",
+                "message": "Hostname is a registered domain name (not an IP address).",
+                "impact": 0
+            },
+            {
+                "check": "Presence of \"@\" Symbol",
+                "status": "pass",
+                "message": "No \"@\" symbol detected in the URL.",
+                "impact": 0
+            },
+            {
+                "check": "Subdomain Count",
+                "status": "pass",
+                "message": "Subdomain count is in normal range.",
+                "impact": 0
+            },
+            {
+                "check": "Suspicious Keywords",
+                "status": "pass",
+                "message": "No typical phishing keywords found.",
+                "impact": 0
+            },
+            {
+                "check": "Shortening Service",
+                "status": "pass",
+                "message": "Not using a known URL shortening service.",
+                "impact": 0
+            },
+            {
+                "check": "Domain Hyphenation",
+                "status": "pass",
+                "message": "Domain name does not contain hyphens.",
+                "impact": 0
+            },
+            {
+                "check": "Top-Level Domain (TLD) Safety",
+                "status": "pass",
+                "message": "Website uses a standard or highly trusted top-level domain.",
+                "impact": 0
+            }
+        ],
+        "timestamp": "2026-06-23 13:30:24"
+    },
+    {
+        "id": "9feef9e7-6bf7-478d-87fd-482d3e1bbcff",
+        "url": "https://paypal-account-security-check.net",
+        "hostname": "paypal-account-security-check.net",
+        "risk_score": 45,
+        "category": "Suspicious",
+        "details": [
+            {
+                "check": "HTTPS Availability",
+                "status": "pass",
+                "message": "Website uses secure HTTPS encryption.",
+                "impact": 0
+            },
+            {
+                "check": "URL Length",
+                "status": "pass",
+                "message": "URL length is safe (41 chars).",
+                "impact": 0
+            },
+            {
+                "check": "IP Address in Domain",
+                "status": "pass",
+                "message": "Hostname is a registered domain name (not an IP address).",
+                "impact": 0
+            },
+            {
+                "check": "Presence of \"@\" Symbol",
+                "status": "pass",
+                "message": "No \"@\" symbol detected in the URL.",
+                "impact": 0
+            },
+            {
+                "check": "Subdomain Count",
+                "status": "pass",
+                "message": "Subdomain count is in normal range.",
+                "impact": 0
+            },
+            {
+                "check": "Suspicious Keywords",
+                "status": "fail",
+                "message": "Suspicious keyword(s) detected: account, security. These are common in credential theft.",
+                "impact": 30
+            },
+            {
+                "check": "Shortening Service",
+                "status": "pass",
+                "message": "Not using a known URL shortening service.",
+                "impact": 0
+            },
+            {
+                "check": "Domain Hyphenation",
+                "status": "warning",
+                "message": "Domain name contains hyphens (\"-\"). Phishing sites frequently use hyphens to combine brand names with fake words.",
+                "impact": 15
+            },
+            {
+                "check": "Top-Level Domain (TLD) Safety",
+                "status": "pass",
+                "message": "Website uses a standard or highly trusted top-level domain.",
+                "impact": 0
+            }
+        ],
+        "timestamp": "2026-06-23 13:28:32"
+    },
+    {
+        "id": "d1b429cd-57f0-45ed-be68-ce664a98dc5b",
+        "url": "https://secure-login-bank-verify.com",
+        "hostname": "secure-login-bank-verify.com",
+        "risk_score": 65,
+        "category": "Suspicious",
+        "details": [
+            {
+                "check": "HTTPS Availability",
+                "status": "pass",
+                "message": "Website uses secure HTTPS encryption.",
+                "impact": 0
+            },
+            {
+                "check": "URL Length",
+                "status": "pass",
+                "message": "URL length is safe (36 chars).",
+                "impact": 0
+            },
+            {
+                "check": "IP Address in Domain",
+                "status": "pass",
+                "message": "Hostname is a registered domain name (not an IP address).",
+                "impact": 0
+            },
+            {
+                "check": "Presence of \"@\" Symbol",
+                "status": "pass",
+                "message": "No \"@\" symbol detected in the URL.",
+                "impact": 0
+            },
+            {
+                "check": "Subdomain Count",
+                "status": "pass",
+                "message": "Subdomain count is in normal range.",
+                "impact": 0
+            },
+            {
+                "check": "Suspicious Keywords",
+                "status": "fail",
+                "message": "Suspicious keyword(s) detected: login, verify, secure, bank. These are common in credential theft.",
+                "impact": 50
+            },
+            {
+                "check": "Shortening Service",
+                "status": "pass",
+                "message": "Not using a known URL shortening service.",
+                "impact": 0
+            },
+            {
+                "check": "Domain Hyphenation",
+                "status": "warning",
+                "message": "Domain name contains hyphens (\"-\"). Phishing sites frequently use hyphens to combine brand names with fake words.",
+                "impact": 15
+            },
+            {
+                "check": "Top-Level Domain (TLD) Safety",
+                "status": "pass",
+                "message": "Website uses a standard or highly trusted top-level domain.",
+                "impact": 0
+            }
+        ],
+        "timestamp": "2026-06-23 13:11:32"
+    },
+    {
+        "id": "6d6ebc6c-1302-4f1f-a41b-2c3bc95a4dc0",
+        "url": "ghanchizaid205@gmail.com",
+        "hostname": "ghanchizaid205@gmail.com",
+        "risk_score": 50,
+        "category": "Suspicious",
+        "details": [
+            {
+                "check": "HTTPS Availability",
+                "status": "fail",
+                "message": "Website does not use HTTPS encryption (HTTP is insecure).",
+                "impact": 25
+            },
+            {
+                "check": "URL Length",
+                "status": "pass",
+                "message": "URL length is safe (24 chars).",
+                "impact": 0
+            },
+            {
+                "check": "IP Address in Domain",
+                "status": "pass",
+                "message": "Hostname is a registered domain name (not an IP address).",
+                "impact": 0
+            },
+            {
+                "check": "Presence of \"@\" Symbol",
+                "status": "fail",
+                "message": "URL contains \"@\". Phishing sites use this to trick users into ignoring the real domain.",
+                "impact": 25
+            },
+            {
+                "check": "Subdomain Count",
+                "status": "pass",
+                "message": "Subdomain count is in normal range.",
+                "impact": 0
+            },
+            {
+                "check": "Suspicious Keywords",
+                "status": "pass",
+                "message": "No typical phishing keywords found.",
+                "impact": 0
+            },
+            {
+                "check": "Shortening Service",
+                "status": "pass",
+                "message": "Not using a known URL shortening service.",
+                "impact": 0
+            },
+            {
+                "check": "Domain Hyphenation",
+                "status": "pass",
+                "message": "Domain name does not contain hyphens.",
+                "impact": 0
+            },
+            {
+                "check": "Top-Level Domain (TLD) Safety",
+                "status": "pass",
+                "message": "Website uses a standard or highly trusted top-level domain.",
+                "impact": 0
+            }
+        ],
+        "timestamp": "2026-06-23 13:09:52"
+    },
+    {
+        "id": "56067914-10b1-48f6-88ff-c200f2af33f5",
+        "url": "https://google.com",
+        "hostname": "google.com",
+        "risk_score": 0,
+        "category": "Safe",
+        "details": [
+            {
+                "check": "HTTPS Availability",
+                "status": "pass",
+                "message": "Website uses secure HTTPS encryption.",
+                "impact": 0
+            },
+            {
+                "check": "URL Length",
+                "status": "pass",
+                "message": "URL length is safe (18 chars).",
+                "impact": 0
+            },
+            {
+                "check": "IP Address in Domain",
+                "status": "pass",
+                "message": "Hostname is a registered domain name (not an IP address).",
+                "impact": 0
+            },
+            {
+                "check": "Presence of \"@\" Symbol",
+                "status": "pass",
+                "message": "No \"@\" symbol detected in the URL.",
+                "impact": 0
+            },
+            {
+                "check": "Subdomain Count",
+                "status": "pass",
+                "message": "Subdomain count is in normal range.",
+                "impact": 0
+            },
+            {
+                "check": "Suspicious Keywords",
+                "status": "pass",
+                "message": "No typical phishing keywords found.",
+                "impact": 0
+            },
+            {
+                "check": "Shortening Service",
+                "status": "pass",
+                "message": "Not using a known URL shortening service.",
+                "impact": 0
+            },
+            {
+                "check": "Domain Hyphenation",
+                "status": "pass",
+                "message": "Domain name does not contain hyphens.",
+                "impact": 0
+            },
+            {
+                "check": "Top-Level Domain (TLD) Safety",
+                "status": "pass",
+                "message": "Website uses a standard or highly trusted top-level domain.",
+                "impact": 0
+            }
+        ],
+        "timestamp": "2026-06-23 13:03:38"
+    },
+    {
+        "id": "9dc98f4f-e698-486c-bbfa-3f633c90922b",
+        "url": "https://google.com",
+        "hostname": "google.com",
+        "risk_score": 0,
+        "category": "Safe",
+        "details": [
+            {
+                "check": "HTTPS Availability",
+                "status": "pass",
+                "message": "Website uses secure HTTPS encryption.",
+                "impact": 0
+            },
+            {
+                "check": "URL Length",
+                "status": "pass",
+                "message": "URL length is safe (18 chars).",
+                "impact": 0
+            },
+            {
+                "check": "IP Address in Domain",
+                "status": "pass",
+                "message": "Hostname is a registered domain name (not an IP address).",
+                "impact": 0
+            },
+            {
+                "check": "Presence of \"@\" Symbol",
+                "status": "pass",
+                "message": "No \"@\" symbol detected in the URL.",
+                "impact": 0
+            },
+            {
+                "check": "Subdomain Count",
+                "status": "pass",
+                "message": "Subdomain count is in normal range.",
+                "impact": 0
+            },
+            {
+                "check": "Suspicious Keywords",
+                "status": "pass",
+                "message": "No typical phishing keywords found.",
+                "impact": 0
+            },
+            {
+                "check": "Shortening Service",
+                "status": "pass",
+                "message": "Not using a known URL shortening service.",
+                "impact": 0
+            },
+            {
+                "check": "Domain Hyphenation",
+                "status": "pass",
+                "message": "Domain name does not contain hyphens.",
+                "impact": 0
+            },
+            {
+                "check": "Top-Level Domain (TLD) Safety",
+                "status": "pass",
+                "message": "Website uses a standard or highly trusted top-level domain.",
+                "impact": 0
+            }
+        ],
+        "timestamp": "2026-06-23 12:58:41"
+    }
+]

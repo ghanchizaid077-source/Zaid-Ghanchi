@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+
+{% block title %}Educational Guide - Cybersecurity Awareness{% endblock %}
+
+{% block content %}
+<div class="row mb-5 text-center">
+    <div class="col-lg-8 mx-auto">
+        <h1 class="display-6 fw-bold"><i class="fas fa-graduation-cap me-2 text-info"></i>Cybersecurity Awareness Hub</h1>
+        <p class="text-secondary fs-5">Learn how phishing works, understand common threat vectors, and implement defensive strategies to secure your digital presence.</p>
+    </div>
+</div>
+
+<div class="row g-4">
+    <!-- Main content: Phishing Explained -->
+    <div class="col-lg-8">
+        <div class="cyber-card shadow p-4 p-md-5 mb-4">
+            <h3 class="fw-bold mb-4 text-info"><i class="fas fa-info-circle me-2"></i>What is Phishing?</h3>
+            <p>Phishing is a type of social engineering attack where cybercriminals impersonate legitimate businesses, financial institutions, or trusted individuals to trick victims into revealing sensitive information, such as passwords, social security numbers, and credit card details.</p>
+            <p>These attacks typically occur through emails, SMS messages (smishing), or phone calls (vishing), directing users to enter details on a fake website that looks almost identical to the genuine portal.</p>
+            
+            <h4 class="fw-bold mt-5 mb-4 text-info"><i class="fas fa-spider me-2"></i>Common Types of Phishing</h4>
+            
+            <div class="cyber-guide-box">
+                <h5 class="fw-bold">1. Spear Phishing</h5>
+                <p class="text-secondary">Targeted phishing campaigns customized for a specific individual or organization. Attackers gather personal details from social media or company directories to build highly convincing emails.</p>
+            </div>
+
+            <div class="cyber-guide-box">
+                <h5 class="fw-bold">2. Whaling</h5>
+                <p class="text-secondary">A highly focused spear-phishing attack directed at high-profile executives (CEOs, CFOs, government officials) to steal corporate credentials, trade secrets, or initiate massive wire transfers.</p>
+            </div>
+
+            <div class="cyber-guide-box">
+                <h5 class="fw-bold">3. Clone Phishing</h5>
+                <p class="text-secondary">Attackers clone a previously delivered, legitimate email containing an attachment or link. They replace the file/link with a malicious version and send it from a spoofed address claiming it is an update.</p>
+            </div>
+
+            <div class="cyber-guide-box">
+                <h5 class="fw-bold">4. HTTPS Phishing</h5>
+                <p class="text-secondary">Attackers install free SSL certificates on their malicious domains to display the padlock icon in the address bar, tricking users into believing the site is safe. (HTTPS only encrypts the connection; it does not guarantee the site's legitimacy).</p>
+            </div>
+        </div>
+
+        <div class="cyber-card shadow p-4 p-md-5">
+            <h3 class="fw-bold mb-4 text-info"><i class="fas fa-shield-alt me-2"></i>Defense & Prevention Methods</h3>
+            <p>Preventing phishing requires a combination of modern security tools, web filters, and human awareness. Follow these guidelines to stay protected:</p>
+            
+            <ul class="list-unstyled d-flex flex-column gap-3 mt-4">
+                <li class="d-flex align-items-start">
+                    <i class="fas fa-check-circle text-success me-3 mt-1"></i>
+                    <div>
+                        <strong class="d-block">Enable Multi-Factor Authentication (MFA)</strong>
+                        <span class="text-secondary">MFA adds an extra layer of defense. Even if an attacker steals your password, they cannot gain access without your secondary verification token.</span>
+                    </div>
+                </li>
+                <li class="d-flex align-items-start">
+                    <i class="fas fa-check-circle text-success me-3 mt-1"></i>
+                    <div>
+                        <strong class="d-block">Inspect URLs Thoroughly</strong>
+                        <span class="text-secondary">Always look closely at domain names for typos (e.g., <code>paypa1.com</code> instead of <code>paypal.com</code>), subdomains (e.g., <code>paypal.verify-secure.com</code>), and unexpected extensions.</span>
+                    </div>
+                </li>
+                <li class="d-flex align-items-start">
+                    <i class="fas fa-check-circle text-success me-3 mt-1"></i>
+                    <div>
+                        <strong class="d-block">Never Click Direct Login Links</strong>
+                        <span class="text-secondary">If an email claims your account is locked, do not click the link inside. Open your browser and navigate directly to the official website bookmark.</span>
+                    </div>
+                </li>
+                <li class="d-flex align-items-start">
+                    <i class="fas fa-check-circle text-success me-3 mt-1"></i>
+                    <div>
+                        <strong class="d-block">Use Web Protection Software</strong>
+                        <span class="text-secondary">Keep your browsers updated and enable built-in safe browsing tools. Utilize phishing detection utilities (like this portal) to scan suspicious links beforehand.</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Sidebar: Quick Facts / Tips -->
+    <div class="col-lg-4">
+        <div class="cyber-card shadow mb-4">
+            <h5 class="fw-bold border-bottom pb-3 mb-3 text-info"><i class="fas fa-lightbulb me-2"></i>Quick Warning Signs</h5>
+            <div class="d-flex flex-column gap-3">
+                <div class="p-2 border-bottom border-secondary-subtle">
+                    <span class="badge bg-danger mb-2">High Urgency</span>
+                    <p class="small mb-0">Emails demanding immediate action ("Your account will be suspended in 24 hours") are designed to provoke panic.</p>
+                </div>
+                <div class="p-2 border-bottom border-secondary-subtle">
+                    <span class="badge bg-warning text-dark mb-2">Suspicious Domain</span>
+                    <p class="small mb-0">Domains that don't match the sender's organization, or use free hosting providers (e.g., <code>000webhostapp.com</code>).</p>
+                </div>
+                <div class="p-2">
+                    <span class="badge bg-info text-dark mb-2">Generic Greetings</span>
+                    <p class="small mb-0">Salutations like "Dear Customer" or "Dear User" instead of your actual name imply bulk generic phishing spam.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cyber-card shadow text-center p-4">
+            <i class="fas fa-user-shield fa-4x text-info mb-3"></i>
+            <h5 class="fw-bold mb-2">Be Alert, Stay Safe!</h5>
+            <p class="small text-secondary mb-3">Cybersecurity is a shared responsibility. Educate your peers and report suspicious domains to reporting agencies like Google Safe Browsing or APWG.</p>
+            <a href="{{ url_for('index') }}" class="btn btn-cyber-primary w-100">Go to Scanner</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

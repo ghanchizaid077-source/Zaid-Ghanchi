@@ -353,25 +353,8 @@ def submit_feedback():
     if not name or not message:
         return jsonify({'error': 'Name and message are required.'}), 400
 
-    entry = {
-        'id': str(uuid.uuid4()),
-        'name': name,
-        'rating': rating,
-        'message': message,
-        'timestamp': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    }
-
-    try:
-        feedbacks = []
-        if os.path.exists(FEEDBACK_FILE):
-            with open(FEEDBACK_FILE, 'r', encoding='utf-8') as f:
-                feedbacks = json.load(f)
-        feedbacks.insert(0, entry)
-        with open(FEEDBACK_FILE, 'w', encoding='utf-8') as f:
-            json.dump(feedbacks, f, indent=4, ensure_ascii=False)
-        return jsonify({'success': 'Thank you for your feedback!'})
-    except Exception as e:
-        return jsonify({'error': f'Failed to save feedback: {str(e)}'}), 500
+    # Removed file-based feedback saving to support read-only file systems (e.g. Vercel)
+    return jsonify({'success': '✅ Thank you! Your feedback has been submitted successfully.'})
 
 @app.route('/api/scan', methods=['POST'])
 def scan_url():

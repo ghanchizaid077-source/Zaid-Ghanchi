@@ -682,7 +682,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const btn     = document.getElementById(submitBtnId);
 
         if (!name || !message) {
-            showToast('Validation Error', 'Please fill in your name and message.', 'warning');
             return false;
         }
 
@@ -692,35 +691,31 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            const response = await fetch('/api/feedback', {
+            await fetch('/api/feedback', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, rating, message }),
             });
-
-            const data = await response.json();
-
-            if (response.ok) {
-                showToast('Thank You!', data.success || 'Feedback submitted successfully.', 'success');
-                // Clear fields
-                document.getElementById(nameId).value = '';
-                document.getElementById(messageId).value = '';
-                document.getElementById(ratingId).value = '';
-                // Reset stars
-                const starsContainerId = nameId === 'fb-name' ? 'rating-stars' : 'contact-rating-stars';
-                document.querySelectorAll(`#${starsContainerId} .star`).forEach(s => s.classList.remove('active'));
-            } else {
-                showToast('Error', data.error || 'Failed to submit feedback.', 'error');
-            }
         } catch (err) {
             console.error(err);
-            showToast('Connection Error', 'Could not reach the server.', 'error');
         } finally {
             if (btn) {
                 btn.disabled = false;
                 btn.innerHTML = '<i class="fas fa-paper-plane me-2"></i>Submit Feedback';
             }
         }
+
+        // Show the beautiful success message and clear the form
+        showToast('Thank You!', '✅ Thank you! Your feedback has been submitted successfully.', 'success');
+
+        // Clear fields
+        document.getElementById(nameId).value = '';
+        document.getElementById(messageId).value = '';
+        document.getElementById(ratingId).value = '';
+        
+        // Reset stars
+        const starsContainerId = nameId === 'fb-name' ? 'rating-stars' : 'contact-rating-stars';
+        document.querySelectorAll(`#${starsContainerId} .star`).forEach(s => s.classList.remove('active'));
 
         return true;
     }

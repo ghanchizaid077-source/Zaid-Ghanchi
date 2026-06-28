@@ -12,6 +12,7 @@ app = Flask(__name__)
 # File paths
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 HISTORY_FILE = os.path.join(BASE_DIR, 'data', 'history.json')
+FEEDBACK_FILE = os.path.join(BASE_DIR, 'data', 'feedback.json')
 EXPORTS_DIR = os.path.join(BASE_DIR, 'exports')
 
 # Ensure directories exist
@@ -333,6 +334,44 @@ def history():
 @app.route('/about')
 def about():
     return render_template('about.html')
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
+@app.route('/educational-guide')
+def educational_guide():
+    return render_template('guide.html')
+
+@app.route('/api/feedback', methods=['POST'])
+def submit_feedback():
+    data = request.get_json() or {}
+    name = data.get('name', '').strip()
+    rating = data.get('rating', '').strip()
+    message = data.get('message', '').strip()
+
+    if not name or not message:
+        return jsonify({'error': 'Name and message are required.'}), 400
+
+    entry = {
+        'id': str(uuid.uuid4()),
+        'name': name,
+        'rating': rating,
+        'message': message,
+        'timestamp': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    }
+
+    try:
+        feedbacks = []
+        if os.path.exists(FEEDBACK_FILE):
+            with open(FEEDBACK_FILE, 'r', encoding='utf-8') as f:
+                feedbacks = json.load(f)
+        feedbacks.insert(0, entry)
+        with open(FEEDBACK_FILE, 'w', encoding='utf-8') as f:
+            json.dump(feedbacks, f, indent=4, ensure_ascii=False)
+        return jsonify({'success': 'Thank you for your feedback!'})
+    except Exception as e:
+        return jsonify({'error': f'Failed to save feedback: {str(e)}'}), 500
 
 @app.route('/api/scan', methods=['POST'])
 def scan_url():

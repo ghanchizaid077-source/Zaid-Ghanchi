@@ -1,109 +1,601 @@
 {% extends 'base.html' %}
 
-{% block title %}Educational Guide - Cybersecurity Awareness{% endblock %}
+{% block title %}About - Developer & Project{% endblock %}
 
 {% block content %}
-<div class="row mb-5 text-center">
-    <div class="col-lg-8 mx-auto">
-        <h1 class="display-6 fw-bold"><i class="fas fa-graduation-cap me-2 text-info"></i>Cybersecurity Awareness Hub</h1>
-        <p class="text-secondary fs-5">Learn how phishing works, understand common threat vectors, and implement defensive strategies to secure your digital presence.</p>
-    </div>
-</div>
 
-<div class="row g-4">
-    <!-- Main content: Phishing Explained -->
-    <div class="col-lg-8">
-        <div class="cyber-card shadow p-4 p-md-5 mb-4">
-            <h3 class="fw-bold mb-4 text-info"><i class="fas fa-info-circle me-2"></i>What is Phishing?</h3>
-            <p>Phishing is a type of social engineering attack where cybercriminals impersonate legitimate businesses, financial institutions, or trusted individuals to trick victims into revealing sensitive information, such as passwords, social security numbers, and credit card details.</p>
-            <p>These attacks typically occur through emails, SMS messages (smishing), or phone calls (vishing), directing users to enter details on a fake website that looks almost identical to the genuine portal.</p>
-            
-            <h4 class="fw-bold mt-5 mb-4 text-info"><i class="fas fa-spider me-2"></i>Common Types of Phishing</h4>
-            
-            <div class="cyber-guide-box">
-                <h5 class="fw-bold">1. Spear Phishing</h5>
-                <p class="text-secondary">Targeted phishing campaigns customized for a specific individual or organization. Attackers gather personal details from social media or company directories to build highly convincing emails.</p>
-            </div>
-
-            <div class="cyber-guide-box">
-                <h5 class="fw-bold">2. Whaling</h5>
-                <p class="text-secondary">A highly focused spear-phishing attack directed at high-profile executives (CEOs, CFOs, government officials) to steal corporate credentials, trade secrets, or initiate massive wire transfers.</p>
-            </div>
-
-            <div class="cyber-guide-box">
-                <h5 class="fw-bold">3. Clone Phishing</h5>
-                <p class="text-secondary">Attackers clone a previously delivered, legitimate email containing an attachment or link. They replace the file/link with a malicious version and send it from a spoofed address claiming it is an update.</p>
-            </div>
-
-            <div class="cyber-guide-box">
-                <h5 class="fw-bold">4. HTTPS Phishing</h5>
-                <p class="text-secondary">Attackers install free SSL certificates on their malicious domains to display the padlock icon in the address bar, tricking users into believing the site is safe. (HTTPS only encrypts the connection; it does not guarantee the site's legitimacy).</p>
-            </div>
-        </div>
-
-        <div class="cyber-card shadow p-4 p-md-5">
-            <h3 class="fw-bold mb-4 text-info"><i class="fas fa-shield-alt me-2"></i>Defense & Prevention Methods</h3>
-            <p>Preventing phishing requires a combination of modern security tools, web filters, and human awareness. Follow these guidelines to stay protected:</p>
-            
-            <ul class="list-unstyled d-flex flex-column gap-3 mt-4">
-                <li class="d-flex align-items-start">
-                    <i class="fas fa-check-circle text-success me-3 mt-1"></i>
-                    <div>
-                        <strong class="d-block">Enable Multi-Factor Authentication (MFA)</strong>
-                        <span class="text-secondary">MFA adds an extra layer of defense. Even if an attacker steals your password, they cannot gain access without your secondary verification token.</span>
-                    </div>
-                </li>
-                <li class="d-flex align-items-start">
-                    <i class="fas fa-check-circle text-success me-3 mt-1"></i>
-                    <div>
-                        <strong class="d-block">Inspect URLs Thoroughly</strong>
-                        <span class="text-secondary">Always look closely at domain names for typos (e.g., <code>paypa1.com</code> instead of <code>paypal.com</code>), subdomains (e.g., <code>paypal.verify-secure.com</code>), and unexpected extensions.</span>
-                    </div>
-                </li>
-                <li class="d-flex align-items-start">
-                    <i class="fas fa-check-circle text-success me-3 mt-1"></i>
-                    <div>
-                        <strong class="d-block">Never Click Direct Login Links</strong>
-                        <span class="text-secondary">If an email claims your account is locked, do not click the link inside. Open your browser and navigate directly to the official website bookmark.</span>
-                    </div>
-                </li>
-                <li class="d-flex align-items-start">
-                    <i class="fas fa-check-circle text-success me-3 mt-1"></i>
-                    <div>
-                        <strong class="d-block">Use Web Protection Software</strong>
-                        <span class="text-secondary">Keep your browsers updated and enable built-in safe browsing tools. Utilize phishing detection utilities (like this portal) to scan suspicious links beforehand.</span>
-                    </div>
-                </li>
-            </ul>
-        </div>
+<!-- ===================== ABOUT DEVELOPER ===================== -->
+<section class="about-dev-section mb-5">
+    <div class="section-header text-center mb-5">
+        <span class="section-badge mb-3">
+            <i class="fas fa-user-graduate me-2"></i>About Developer
+        </span>
+        <h1 class="section-title">Meet the <span class="text-info">Developer</span></h1>
+        <p class="text-secondary">The mind behind PhishGuard — a cybersecurity project born from passion and purpose.</p>
     </div>
 
-    <!-- Sidebar: Quick Facts / Tips -->
-    <div class="col-lg-4">
-        <div class="cyber-card shadow mb-4">
-            <h5 class="fw-bold border-bottom pb-3 mb-3 text-info"><i class="fas fa-lightbulb me-2"></i>Quick Warning Signs</h5>
-            <div class="d-flex flex-column gap-3">
-                <div class="p-2 border-bottom border-secondary-subtle">
-                    <span class="badge bg-danger mb-2">High Urgency</span>
-                    <p class="small mb-0">Emails demanding immediate action ("Your account will be suspended in 24 hours") are designed to provoke panic.</p>
+    <div class="row g-4 align-items-center">
+        <!-- Profile Photo -->
+        <div class="col-lg-4 text-center">
+            <div class="dev-profile-card">
+                <div class="dev-avatar-wrapper">
+                    <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Ghanchi Mohammadzaid Inayatbhai" class="dev-avatar">
+                    <div class="dev-avatar-ring"></div>
+                    <div class="dev-status-dot"><i class="fas fa-circle text-success" style="font-size:0.6rem;"></i></div>
                 </div>
-                <div class="p-2 border-bottom border-secondary-subtle">
-                    <span class="badge bg-warning text-dark mb-2">Suspicious Domain</span>
-                    <p class="small mb-0">Domains that don't match the sender's organization, or use free hosting providers (e.g., <code>000webhostapp.com</code>).</p>
-                </div>
-                <div class="p-2">
-                    <span class="badge bg-info text-dark mb-2">Generic Greetings</span>
-                    <p class="small mb-0">Salutations like "Dear Customer" or "Dear User" instead of your actual name imply bulk generic phishing spam.</p>
+                <h3 class="dev-name mt-4">Ghanchi Mohammadzaid Inayatbhai</h3>
+                <p class="dev-role"><i class="fas fa-code me-2 text-info"></i>Computer Engineering Student</p>
+                <div class="dev-social-links">
+                    <a href="https://github.com/MohammadzaidGhanchi" target="_blank" class="dev-social-btn" title="GitHub Profile">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="{{ url_for('contact') }}" class="dev-social-btn" title="Contact">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="{{ url_for('index') }}" class="dev-social-btn" title="Try the Scanner">
+                        <i class="fas fa-shield-virus"></i>
+                    </a>
                 </div>
             </div>
         </div>
 
-        <div class="cyber-card shadow text-center p-4">
-            <i class="fas fa-user-shield fa-4x text-info mb-3"></i>
-            <h5 class="fw-bold mb-2">Be Alert, Stay Safe!</h5>
-            <p class="small text-secondary mb-3">Cybersecurity is a shared responsibility. Educate your peers and report suspicious domains to reporting agencies like Google Safe Browsing or APWG.</p>
-            <a href="{{ url_for('index') }}" class="btn btn-cyber-primary w-100">Go to Scanner</a>
+        <!-- Developer Details -->
+        <div class="col-lg-8">
+            <div class="row g-3 mb-4">
+                <div class="col-sm-6">
+                    <div class="dev-info-card">
+                        <div class="dev-info-icon"><i class="fas fa-university"></i></div>
+                        <div>
+                            <div class="dev-info-label">College</div>
+                            <div class="dev-info-value">Shree K. J. Polytechnic, Bharuch</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="dev-info-card">
+                        <div class="dev-info-icon"><i class="fas fa-microchip"></i></div>
+                        <div>
+                            <div class="dev-info-label">Branch</div>
+                            <div class="dev-info-value">Computer Engineering</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="dev-info-card">
+                        <div class="dev-info-icon"><i class="fas fa-layer-group"></i></div>
+                        <div>
+                            <div class="dev-info-label">Semester</div>
+                            <div class="dev-info-value">5th Semester</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="dev-info-card">
+                        <div class="dev-info-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <div>
+                            <div class="dev-info-label">Program</div>
+                            <div class="dev-info-value">GTU SBTP 2026</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cyber-card p-4">
+                <h5 class="fw-bold mb-3 text-info"><i class="fas fa-quote-left me-2"></i>About Me</h5>
+                <p class="text-secondary lh-lg mb-3">
+                    I am a <strong class="text-primary-emphasis">Computer Engineering student</strong> passionate about
+                    <strong class="text-info">Cybersecurity</strong>, <strong class="text-info">Machine Learning</strong>
+                    and <strong class="text-info">Web Development</strong>. This project was developed as part of the
+                    <strong class="text-primary-emphasis">GTU Skill-Based Training Program (SBTP)</strong> to help users
+                    identify phishing websites using Machine Learning techniques.
+                </p>
+                <div class="d-flex flex-wrap gap-2 mt-3">
+                    <span class="skill-badge"><i class="fas fa-shield-alt me-1"></i>Cybersecurity</span>
+                    <span class="skill-badge"><i class="fas fa-brain me-1"></i>Machine Learning</span>
+                    <span class="skill-badge"><i class="fab fa-python me-1"></i>Python</span>
+                    <span class="skill-badge"><i class="fas fa-code me-1"></i>Web Development</span>
+                    <span class="skill-badge"><i class="fas fa-flask me-1"></i>Flask</span>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+</section>
+
+<hr class="section-divider my-5">
+
+<!-- ===================== TECHNOLOGIES USED ===================== -->
+<section class="technologies-section mb-5">
+    <div class="section-header text-center mb-5">
+        <span class="section-badge mb-3">
+            <i class="fas fa-tools me-2"></i>Tech Stack
+        </span>
+        <h2 class="section-title">Technologies <span class="text-info">Used</span></h2>
+        <p class="text-secondary">The powerful tools and frameworks that make PhishGuard work.</p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+        <div class="col-6 col-md-4 col-lg-3">
+            <div class="tech-card">
+                <div class="tech-card-icon" style="background: linear-gradient(135deg,#3776ab,#1f5582);">
+                    <i class="fab fa-python"></i>
+                </div>
+                <h6 class="tech-card-name">Python</h6>
+                <p class="tech-card-desc">Backend Language</p>
+            </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+            <div class="tech-card">
+                <div class="tech-card-icon" style="background: linear-gradient(135deg,#000,#333);">
+                    <i class="fas fa-flask"></i>
+                </div>
+                <h6 class="tech-card-name">Flask</h6>
+                <p class="tech-card-desc">Web Framework</p>
+            </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+            <div class="tech-card">
+                <div class="tech-card-icon" style="background: linear-gradient(135deg,#ff6f00,#f57c00);">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h6 class="tech-card-name">Machine Learning</h6>
+                <p class="tech-card-desc">Heuristic Analysis</p>
+            </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+            <div class="tech-card">
+                <div class="tech-card-icon" style="background: linear-gradient(135deg,#e44d26,#f16529);">
+                    <i class="fab fa-html5"></i>
+                </div>
+                <h6 class="tech-card-name">HTML5</h6>
+                <p class="tech-card-desc">Markup Language</p>
+            </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+            <div class="tech-card">
+                <div class="tech-card-icon" style="background: linear-gradient(135deg,#1572b6,#0d6efd);">
+                    <i class="fab fa-css3-alt"></i>
+                </div>
+                <h6 class="tech-card-name">CSS3</h6>
+                <p class="tech-card-desc">Styling & Animations</p>
+            </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+            <div class="tech-card">
+                <div class="tech-card-icon" style="background: linear-gradient(135deg,#f7df1e,#d4b800); color:#000;">
+                    <i class="fab fa-js"></i>
+                </div>
+                <h6 class="tech-card-name">JavaScript</h6>
+                <p class="tech-card-desc">Frontend Logic</p>
+            </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+            <div class="tech-card">
+                <div class="tech-card-icon" style="background: linear-gradient(135deg,#7952b3,#563d7c);">
+                    <i class="fab fa-bootstrap"></i>
+                </div>
+                <h6 class="tech-card-name">Bootstrap</h6>
+                <p class="tech-card-desc">UI Framework</p>
+            </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+            <div class="tech-card">
+                <div class="tech-card-icon" style="background: linear-gradient(135deg,#24292e,#444);">
+                    <i class="fab fa-github"></i>
+                </div>
+                <h6 class="tech-card-name">GitHub</h6>
+                <p class="tech-card-desc">Version Control</p>
+            </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+            <div class="tech-card">
+                <div class="tech-card-icon" style="background: linear-gradient(135deg,#46e3b7,#0da89b);">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                </div>
+                <h6 class="tech-card-name">Render</h6>
+                <p class="tech-card-desc">Cloud Deployment</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr class="section-divider my-5">
+
+<!-- ===================== HOW IT WORKS ===================== -->
+<section class="how-it-works-section mb-5">
+    <div class="section-header text-center mb-5">
+        <span class="section-badge mb-3">
+            <i class="fas fa-cogs me-2"></i>Process
+        </span>
+        <h2 class="section-title">How It <span class="text-info">Works</span></h2>
+        <p class="text-secondary">Five simple steps to detect phishing — powered by Machine Learning.</p>
+    </div>
+
+    <div class="timeline-container">
+        <div class="timeline-line"></div>
+
+        <div class="timeline-step">
+            <div class="timeline-badge">1</div>
+            <div class="timeline-card">
+                <div class="timeline-icon" style="background: rgba(0,240,255,0.12); color:#00f0ff;">
+                    <i class="fas fa-keyboard"></i>
+                </div>
+                <div class="timeline-content">
+                    <h5 class="timeline-title">Enter URL</h5>
+                    <p class="timeline-desc">Paste or type any suspicious URL into the PhishGuard scanner input field.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline-step">
+            <div class="timeline-badge">2</div>
+            <div class="timeline-card">
+                <div class="timeline-icon" style="background: rgba(139,92,246,0.12); color:#8b5cf6;">
+                    <i class="fas fa-microscope"></i>
+                </div>
+                <div class="timeline-content">
+                    <h5 class="timeline-title">Extract URL Features</h5>
+                    <p class="timeline-desc">The system extracts 10+ structural features: length, subdomains, special characters, TLD, and more.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline-step">
+            <div class="timeline-badge">3</div>
+            <div class="timeline-card">
+                <div class="timeline-icon" style="background: rgba(245,158,11,0.12); color:#f59e0b;">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <div class="timeline-content">
+                    <h5 class="timeline-title">Machine Learning Analysis</h5>
+                    <p class="timeline-desc">ML heuristic models evaluate each feature against known phishing attack patterns and assign risk weights.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline-step">
+            <div class="timeline-badge">4</div>
+            <div class="timeline-card">
+                <div class="timeline-icon" style="background: rgba(16,185,129,0.12); color:#10b981;">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="timeline-content">
+                    <h5 class="timeline-title">Security Verification</h5>
+                    <p class="timeline-desc">SSL certificate check, domain reputation audit, IP address detection, and keyword scanning are performed.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline-step">
+            <div class="timeline-badge">5</div>
+            <div class="timeline-card">
+                <div class="timeline-icon" style="background: rgba(239,68,68,0.12); color:#ef4444;">
+                    <i class="fas fa-chart-pie"></i>
+                </div>
+                <div class="timeline-content">
+                    <h5 class="timeline-title">Final Prediction</h5>
+                    <p class="timeline-desc">A 0–100% risk score is calculated. The site is classified as <strong class="text-success">Safe</strong>, <strong class="text-warning">Suspicious</strong>, or <strong class="text-danger">Dangerous</strong>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr class="section-divider my-5">
+
+<!-- ===================== PROJECT SCREENSHOTS GALLERY ===================== -->
+<section class="gallery-section mb-5">
+    <div class="section-header text-center mb-5">
+        <span class="section-badge mb-3">
+            <i class="fas fa-images me-2"></i>Gallery
+        </span>
+        <h2 class="section-title">Project <span class="text-info">Screenshots</span></h2>
+        <p class="text-secondary">Visual walkthrough of PhishGuard's key interfaces.</p>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="gallery-card gallery-placeholder">
+                <div class="gallery-placeholder-inner">
+                    <i class="fas fa-search-plus fa-3x text-info mb-3"></i>
+                    <h6 class="fw-bold">Scanner Interface</h6>
+                    <p class="text-secondary small mb-0">URL scan input with real-time result display</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="gallery-card gallery-placeholder">
+                <div class="gallery-placeholder-inner">
+                    <i class="fas fa-chart-pie fa-3x text-info mb-3"></i>
+                    <h6 class="fw-bold">Analytics Dashboard</h6>
+                    <p class="text-secondary small mb-0">Visual scan statistics with donut chart</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="gallery-card gallery-placeholder">
+                <div class="gallery-placeholder-inner">
+                    <i class="fas fa-history fa-3x text-info mb-3"></i>
+                    <h6 class="fw-bold">Scan History</h6>
+                    <p class="text-secondary small mb-0">Full log with search and CSV export</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="gallery-card gallery-placeholder">
+                <div class="gallery-placeholder-inner">
+                    <i class="fas fa-skull-crossbones fa-3x text-danger mb-3"></i>
+                    <h6 class="fw-bold">Dangerous URL Result</h6>
+                    <p class="text-secondary small mb-0">Risk meter and heuristic breakdown for phishing URL</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="gallery-card gallery-placeholder">
+                <div class="gallery-placeholder-inner">
+                    <i class="fas fa-shield-alt fa-3x text-success mb-3"></i>
+                    <h6 class="fw-bold">Safe URL Result</h6>
+                    <p class="text-secondary small mb-0">Green risk meter showing a trusted website</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="gallery-note text-center mt-4">
+        <i class="fas fa-info-circle text-info me-2"></i>
+        <span class="text-secondary small">Screenshots will be added after deployment. Use the Scanner to try it live!</span>
+    </div>
+</section>
+
+<hr class="section-divider my-5">
+
+<!-- ===================== CYBERSECURITY EDUCATION (ORIGINAL CONTENT PRESERVED) ===================== -->
+<section class="education-section mb-5">
+    <div class="row mb-5 text-center">
+        <div class="col-lg-8 mx-auto">
+            <h2 class="display-6 fw-bold"><i class="fas fa-graduation-cap me-2 text-info"></i>Cybersecurity Awareness Hub</h2>
+            <p class="text-secondary fs-5">Learn how phishing works, understand common threat vectors, and implement defensive strategies to secure your digital presence.</p>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <!-- Main content: Phishing Explained -->
+        <div class="col-lg-8">
+            <div class="cyber-card shadow p-4 p-md-5 mb-4">
+                <h3 class="fw-bold mb-4 text-info"><i class="fas fa-info-circle me-2"></i>What is Phishing?</h3>
+                <p>Phishing is a type of social engineering attack where cybercriminals impersonate legitimate businesses, financial institutions, or trusted individuals to trick victims into revealing sensitive information, such as passwords, social security numbers, and credit card details.</p>
+                <p>These attacks typically occur through emails, SMS messages (smishing), or phone calls (vishing), directing users to enter details on a fake website that looks almost identical to the genuine portal.</p>
+                
+                <h4 class="fw-bold mt-5 mb-4 text-info"><i class="fas fa-spider me-2"></i>Common Types of Phishing</h4>
+                
+                <div class="cyber-guide-box">
+                    <h5 class="fw-bold">1. Spear Phishing</h5>
+                    <p class="text-secondary">Targeted phishing campaigns customized for a specific individual or organization. Attackers gather personal details from social media or company directories to build highly convincing emails.</p>
+                </div>
+
+                <div class="cyber-guide-box">
+                    <h5 class="fw-bold">2. Whaling</h5>
+                    <p class="text-secondary">A highly focused spear-phishing attack directed at high-profile executives (CEOs, CFOs, government officials) to steal corporate credentials, trade secrets, or initiate massive wire transfers.</p>
+                </div>
+
+                <div class="cyber-guide-box">
+                    <h5 class="fw-bold">3. Clone Phishing</h5>
+                    <p class="text-secondary">Attackers clone a previously delivered, legitimate email containing an attachment or link. They replace the file/link with a malicious version and send it from a spoofed address claiming it is an update.</p>
+                </div>
+
+                <div class="cyber-guide-box">
+                    <h5 class="fw-bold">4. HTTPS Phishing</h5>
+                    <p class="text-secondary">Attackers install free SSL certificates on their malicious domains to display the padlock icon in the address bar, tricking users into believing the site is safe. (HTTPS only encrypts the connection; it does not guarantee the site's legitimacy).</p>
+                </div>
+            </div>
+
+            <div class="cyber-card shadow p-4 p-md-5">
+                <h3 class="fw-bold mb-4 text-info"><i class="fas fa-shield-alt me-2"></i>Defense &amp; Prevention Methods</h3>
+                <p>Preventing phishing requires a combination of modern security tools, web filters, and human awareness. Follow these guidelines to stay protected:</p>
+                
+                <ul class="list-unstyled d-flex flex-column gap-3 mt-4">
+                    <li class="d-flex align-items-start">
+                        <i class="fas fa-check-circle text-success me-3 mt-1"></i>
+                        <div>
+                            <strong class="d-block">Enable Multi-Factor Authentication (MFA)</strong>
+                            <span class="text-secondary">MFA adds an extra layer of defense. Even if an attacker steals your password, they cannot gain access without your secondary verification token.</span>
+                        </div>
+                    </li>
+                    <li class="d-flex align-items-start">
+                        <i class="fas fa-check-circle text-success me-3 mt-1"></i>
+                        <div>
+                            <strong class="d-block">Inspect URLs Thoroughly</strong>
+                            <span class="text-secondary">Always look closely at domain names for typos (e.g., <code>paypa1.com</code> instead of <code>paypal.com</code>), subdomains (e.g., <code>paypal.verify-secure.com</code>), and unexpected extensions.</span>
+                        </div>
+                    </li>
+                    <li class="d-flex align-items-start">
+                        <i class="fas fa-check-circle text-success me-3 mt-1"></i>
+                        <div>
+                            <strong class="d-block">Never Click Direct Login Links</strong>
+                            <span class="text-secondary">If an email claims your account is locked, do not click the link inside. Open your browser and navigate directly to the official website bookmark.</span>
+                        </div>
+                    </li>
+                    <li class="d-flex align-items-start">
+                        <i class="fas fa-check-circle text-success me-3 mt-1"></i>
+                        <div>
+                            <strong class="d-block">Use Web Protection Software</strong>
+                            <span class="text-secondary">Keep your browsers updated and enable built-in safe browsing tools. Utilize phishing detection utilities (like this portal) to scan suspicious links beforehand.</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Sidebar: Quick Facts / Tips -->
+        <div class="col-lg-4">
+            <div class="cyber-card shadow mb-4">
+                <h5 class="fw-bold border-bottom pb-3 mb-3 text-info"><i class="fas fa-lightbulb me-2"></i>Quick Warning Signs</h5>
+                <div class="d-flex flex-column gap-3">
+                    <div class="p-2 border-bottom border-secondary-subtle">
+                        <span class="badge bg-danger mb-2">High Urgency</span>
+                        <p class="small mb-0">Emails demanding immediate action ("Your account will be suspended in 24 hours") are designed to provoke panic.</p>
+                    </div>
+                    <div class="p-2 border-bottom border-secondary-subtle">
+                        <span class="badge bg-warning text-dark mb-2">Suspicious Domain</span>
+                        <p class="small mb-0">Domains that don't match the sender's organization, or use free hosting providers (e.g., <code>000webhostapp.com</code>).</p>
+                    </div>
+                    <div class="p-2">
+                        <span class="badge bg-info text-dark mb-2">Generic Greetings</span>
+                        <p class="small mb-0">Salutations like "Dear Customer" or "Dear User" instead of your actual name imply bulk generic phishing spam.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cyber-card shadow text-center p-4">
+                <i class="fas fa-user-shield fa-4x text-info mb-3"></i>
+                <h5 class="fw-bold mb-2">Be Alert, Stay Safe!</h5>
+                <p class="small text-secondary mb-3">Cybersecurity is a shared responsibility. Educate your peers and report suspicious domains to reporting agencies like Google Safe Browsing or APWG.</p>
+                <a href="{{ url_for('index') }}" class="btn btn-cyber-primary w-100">Go to Scanner</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr class="section-divider my-5">
+
+<!-- ===================== FEEDBACK SECTION ===================== -->
+<section class="feedback-section mb-5" id="feedback">
+    <div class="section-header text-center mb-5">
+        <span class="section-badge mb-3">
+            <i class="fas fa-star me-2"></i>Feedback
+        </span>
+        <h2 class="section-title">Share Your <span class="text-info">Feedback</span></h2>
+        <p class="text-secondary">Your feedback helps improve PhishGuard. Let us know your experience!</p>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-lg-7">
+            <div class="cyber-card p-4 p-md-5">
+                <form id="feedback-form">
+                    <div class="mb-4">
+                        <label for="fb-name" class="form-label fw-semibold text-secondary">Your Name <span class="text-danger">*</span></label>
+                        <div class="cyber-input-group">
+                            <span class="px-3 text-info"><i class="fas fa-user"></i></span>
+                            <input type="text" id="fb-name" class="cyber-input" placeholder="Enter your name" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-semibold text-secondary">Rating</label>
+                        <div class="rating-stars" id="rating-stars">
+                            <span class="star" data-value="1"><i class="fas fa-star"></i></span>
+                            <span class="star" data-value="2"><i class="fas fa-star"></i></span>
+                            <span class="star" data-value="3"><i class="fas fa-star"></i></span>
+                            <span class="star" data-value="4"><i class="fas fa-star"></i></span>
+                            <span class="star" data-value="5"><i class="fas fa-star"></i></span>
+                        </div>
+                        <input type="hidden" id="fb-rating" value="">
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="fb-message" class="form-label fw-semibold text-secondary">Your Message <span class="text-danger">*</span></label>
+                        <textarea id="fb-message" class="cyber-textarea" rows="4" placeholder="Share your experience or suggestions..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-cyber-primary w-100 py-3" id="fb-submit-btn">
+                        <i class="fas fa-paper-plane me-2"></i>Submit Feedback
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr class="section-divider my-5">
+
+<!-- ===================== FAQ SECTION ===================== -->
+<section class="faq-section mb-5">
+    <div class="section-header text-center mb-5">
+        <span class="section-badge mb-3">
+            <i class="fas fa-question-circle me-2"></i>FAQ
+        </span>
+        <h2 class="section-title">Frequently Asked <span class="text-info">Questions</span></h2>
+        <p class="text-secondary">Everything you need to know about PhishGuard.</p>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="faq-accordion" id="faqAccordion">
+
+                <div class="faq-item">
+                    <button class="faq-question" data-target="faq1">
+                        <span><i class="fas fa-shield-alt me-3 text-info"></i>What is PhishGuard?</span>
+                        <i class="fas fa-chevron-down faq-chevron"></i>
+                    </button>
+                    <div class="faq-answer" id="faq1">
+                        PhishGuard is an AI-powered phishing website detector built using Python, Flask, and Machine Learning heuristics. It analyzes URL structure to determine whether a website is safe, suspicious, or dangerous.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" data-target="faq2">
+                        <span><i class="fas fa-cogs me-3 text-info"></i>How does the detection work?</span>
+                        <i class="fas fa-chevron-down faq-chevron"></i>
+                    </button>
+                    <div class="faq-answer" id="faq2">
+                        The scanner analyzes 10+ URL parameters including: HTTPS availability, URL length, IP address usage, suspicious keywords, URL shorteners, subdomain count, domain hyphenation, TLD reputation, special characters, and the presence of "@" symbols. Each parameter is weighted and combined into a 0–100% risk score.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" data-target="faq3">
+                        <span><i class="fas fa-lock me-3 text-info"></i>Is my data stored when I scan a URL?</span>
+                        <i class="fas fa-chevron-down faq-chevron"></i>
+                    </button>
+                    <div class="faq-answer" id="faq3">
+                        Scanned URLs are stored locally in the application's scan history (a JSON file on the server). No data is sent to any third-party service. You can view, search, and delete your scan history at any time from the History page.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" data-target="faq4">
+                        <span><i class="fas fa-percentage me-3 text-info"></i>What does the risk score mean?</span>
+                        <i class="fas fa-chevron-down faq-chevron"></i>
+                    </button>
+                    <div class="faq-answer" id="faq4">
+                        <strong class="text-success">0–30%</strong> = Safe: The URL has few or no phishing indicators.<br>
+                        <strong class="text-warning">31–70%</strong> = Suspicious: Some risk factors present; proceed with caution.<br>
+                        <strong class="text-danger">71–100%</strong> = Dangerous: Multiple phishing indicators detected; avoid this website.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" data-target="faq5">
+                        <span><i class="fas fa-question me-3 text-info"></i>Can PhishGuard detect all phishing sites?</span>
+                        <i class="fas fa-chevron-down faq-chevron"></i>
+                    </button>
+                    <div class="faq-answer" id="faq5">
+                        PhishGuard uses heuristic-based ML analysis which is highly effective but not 100% perfect. Some sophisticated phishing sites may bypass certain checks (e.g., those using HTTPS). Always exercise caution and combine PhishGuard with other security measures.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" data-target="faq6">
+                        <span><i class="fas fa-download me-3 text-info"></i>Can I export my scan history?</span>
+                        <i class="fas fa-chevron-down faq-chevron"></i>
+                    </button>
+                    <div class="faq-answer" id="faq6">
+                        Yes! Navigate to the History page and click the "Export CSV" button. This will download a CSV file containing all your scan records including URLs, risk scores, categories, and timestamps.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" data-target="faq7">
+                        <span><i class="fas fa-graduation-cap me-3 text-info"></i>Who developed this project?</span>
+                        <i class="fas fa-chevron-down faq-chevron"></i>
+                    </button>
+                    <div class="faq-answer" id="faq7">
+                        PhishGuard was developed by <strong>Ghanchi Mohammadzaid Inayatbhai</strong>, a Computer Engineering student (5th Semester) at Shree K. J. Polytechnic, Bharuch, as part of the GTU Skill-Based Training Program (SBTP) 2026.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
 {% endblock %}

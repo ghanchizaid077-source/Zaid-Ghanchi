@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact - PhishGuard{% endblock %}
+
+{% block content %}
+
+<!-- ===================== CONTACT HERO ===================== -->
+<div class="section-header text-center mb-5">
+    <span class="section-badge mb-3">
+        <i class="fas fa-envelope me-2"></i>Get In Touch
+    </span>
+    <h1 class="section-title">Contact <span class="text-info">PhishGuard</span></h1>
+    <p class="text-secondary fs-5">Have questions, suggestions or want to report a bug? We'd love to hear from you.</p>
+</div>
+
+<div class="row g-4 mb-5">
+
+    <!-- Left Column: Info Cards -->
+    <div class="col-lg-5">
+
+        <!-- Developer Card -->
+        <div class="contact-info-card mb-4">
+            <div class="contact-info-icon" style="background: linear-gradient(135deg, rgba(0,240,255,0.2), rgba(139,92,246,0.2)); border-color: rgba(0,240,255,0.3);">
+                <i class="fas fa-user-graduate text-info"></i>
+            </div>
+            <div>
+                <h5 class="fw-bold mb-1">Developer</h5>
+                <p class="text-secondary mb-0">Ghanchi Mohammadzaid Inayatbhai</p>
+                <p class="text-secondary small mb-0">Computer Engineering, 5th Semester</p>
+            </div>
+        </div>
+
+        <!-- College Card -->
+        <div class="contact-info-card mb-4">
+            <div class="contact-info-icon" style="background: linear-gradient(135deg, rgba(16,185,129,0.2), rgba(5,150,105,0.2)); border-color: rgba(16,185,129,0.3);">
+                <i class="fas fa-university text-success"></i>
+            </div>
+            <div>
+                <h5 class="fw-bold mb-1">College</h5>
+                <p class="text-secondary mb-0">Shree K. J. Polytechnic, Bharuch</p>
+                <p class="text-secondary small mb-0">Gujarat Technological University (GTU)</p>
+            </div>
+        </div>
+
+        <!-- Program Card -->
+        <div class="contact-info-card mb-4">
+            <div class="contact-info-icon" style="background: linear-gradient(135deg, rgba(245,158,11,0.2), rgba(217,119,6,0.2)); border-color: rgba(245,158,11,0.3);">
+                <i class="fas fa-graduation-cap" style="color: #f59e0b;"></i>
+            </div>
+            <div>
+                <h5 class="fw-bold mb-1">Program</h5>
+                <p class="text-secondary mb-0">GTU Skill-Based Training Program</p>
+                <p class="text-secondary small mb-0">SBTP 2026 — Cybersecurity Track</p>
+            </div>
+        </div>
+
+        <!-- GitHub Card -->
+        <div class="contact-info-card mb-4">
+            <div class="contact-info-icon" style="background: linear-gradient(135deg, rgba(36,41,46,0.4), rgba(68,68,68,0.4)); border-color: rgba(255,255,255,0.15);">
+                <i class="fab fa-github text-white"></i>
+            </div>
+            <div>
+                <h5 class="fw-bold mb-1">GitHub Repository</h5>
+                <a href="https://github.com/MohammadzaidGhanchi" target="_blank" class="text-info text-decoration-none">
+                    <i class="fas fa-external-link-alt me-1 small"></i>View Source Code
+                </a>
+                <p class="text-secondary small mb-0 mt-1">Open source — Explore the codebase</p>
+            </div>
+        </div>
+
+        <!-- Project Card -->
+        <div class="contact-info-card">
+            <div class="contact-info-icon" style="background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(109,40,217,0.2)); border-color: rgba(139,92,246,0.3);">
+                <i class="fas fa-shield-virus" style="color: #8b5cf6;"></i>
+            </div>
+            <div>
+                <h5 class="fw-bold mb-1">Project</h5>
+                <p class="text-secondary mb-0">PhishGuard — Phishing Website Detector</p>
+                <p class="text-secondary small mb-0">Version 1.0 &mdash; 2026</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right Column: Feedback / Contact Form -->
+    <div class="col-lg-7">
+        <div class="cyber-card p-4 p-md-5 h-100">
+            <h4 class="fw-bold mb-2"><i class="fas fa-paper-plane me-2 text-info"></i>Send a Message</h4>
+            <p class="text-secondary mb-4">Use this form to share your thoughts, report issues, or ask questions about PhishGuard.</p>
+
+            <form id="contact-feedback-form">
+                <div class="mb-4">
+                    <label for="ct-name" class="form-label fw-semibold text-secondary">Your Name <span class="text-danger">*</span></label>
+                    <div class="cyber-input-group">
+                        <span class="px-3 text-info"><i class="fas fa-user"></i></span>
+                        <input type="text" id="ct-name" class="cyber-input" placeholder="Your full name" required>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label fw-semibold text-secondary">Rating</label>
+                    <div class="rating-stars" id="contact-rating-stars">
+                        <span class="star" data-value="1"><i class="fas fa-star"></i></span>
+                        <span class="star" data-value="2"><i class="fas fa-star"></i></span>
+                        <span class="star" data-value="3"><i class="fas fa-star"></i></span>
+                        <span class="star" data-value="4"><i class="fas fa-star"></i></span>
+                        <span class="star" data-value="5"><i class="fas fa-star"></i></span>
+                    </div>
+                    <input type="hidden" id="ct-rating" value="">
+                </div>
+
+                <div class="mb-4">
+                    <label for="ct-message" class="form-label fw-semibold text-secondary">Message <span class="text-danger">*</span></label>
+                    <textarea id="ct-message" class="cyber-textarea" rows="5" placeholder="Write your message, question, or feedback here..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-cyber-primary w-100 py-3" id="ct-submit-btn">
+                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Quick Links Row -->
+<div class="row g-3 mt-2">
+    <div class="col-12">
+        <h5 class="fw-bold text-center mb-4 text-secondary">Quick Links</h5>
+    </div>
+    <div class="col-6 col-md-3">
+        <a href="{{ url_for('index') }}" class="quick-link-card">
+            <i class="fas fa-search text-info"></i>
+            <span>URL Scanner</span>
+        </a>
+    </div>
+    <div class="col-6 col-md-3">
+        <a href="{{ url_for('dashboard') }}" class="quick-link-card">
+            <i class="fas fa-chart-pie text-info"></i>
+            <span>Dashboard</span>
+        </a>
+    </div>
+    <div class="col-6 col-md-3">
+        <a href="{{ url_for('about') }}#feedback" class="quick-link-card">
+            <i class="fas fa-star text-info"></i>
+            <span>Feedback</span>
+        </a>
+    </div>
+    <div class="col-6 col-md-3">
+        <a href="https://github.com/MohammadzaidGhanchi" target="_blank" class="quick-link-card">
+            <i class="fab fa-github text-info"></i>
+            <span>GitHub</span>
+        </a>
+    </div>
+</div>
+
+{% endblock %}

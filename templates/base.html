@@ -52,7 +52,12 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == '/about' %}active{% endif %}" href="{{ url_for('about') }}">
-                            <i class="fas fa-info-circle"></i> Educational Guide
+                            <i class="fas fa-info-circle"></i> About
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/contact' %}active{% endif %}" href="{{ url_for('contact') }}">
+                            <i class="fas fa-envelope"></i> Contact
                         </a>
                     </li>
                     <li class="nav-item ms-lg-2">
@@ -73,26 +78,87 @@
     <!-- Global Toast Container -->
     <div id="toast-container" class="toast-container"></div>
 
+    <!-- Scroll To Top Button -->
+    <button id="scroll-top-btn" class="scroll-top-btn" title="Back to Top" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
     <!-- Footer -->
-    <footer class="text-center py-4">
+    <footer class="py-5">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-4 text-md-start mb-3 mb-md-0">
-                    <p class="mb-0">&copy; 2026 PhishGuard - Cybersecurity Heuristics Initiative.</p>
-                </div>
-                <div class="col-md-4 text-center mb-3 mb-md-0">
-                    <div class="d-flex flex-column flex-md-row justify-content-center gap-2 gap-md-3 text-secondary small font-monospace">
-                        <span><i class="fas fa-code me-1 text-info"></i>Developed by Zaid Ghanchi</span>
-                        <span class="d-none d-md-inline text-muted">|</span>
-                        <span><i class="fas fa-cog me-1 text-info"></i>Version 1.0</span>
-                        <span class="d-none d-md-inline text-muted">|</span>
-                        <span><i class="fas fa-graduation-cap me-1 text-info"></i>Cyber Security Project</span>
+            <div class="row g-4 align-items-start">
+                <!-- Brand Column -->
+                <div class="col-md-4">
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <i class="fas fa-shield-virus fa-lg text-info"></i>
+                        <span class="fw-bold fs-5 footer-brand-name">PHISH<span>GUARD</span></span>
+                    </div>
+                    <p class="text-secondary small mb-3">An AI-powered cybersecurity tool to detect phishing websites using advanced heuristic machine learning techniques.</p>
+                    <div class="d-flex gap-3">
+                        <a href="https://github.com/MohammadzaidGhanchi" target="_blank" class="footer-social-btn" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="{{ url_for('about') }}" class="footer-social-btn" title="About Developer">
+                            <i class="fas fa-user-graduate"></i>
+                        </a>
+                        <a href="{{ url_for('contact') }}" class="footer-social-btn" title="Contact">
+                            <i class="fas fa-envelope"></i>
+                        </a>
                     </div>
                 </div>
-                <div class="col-md-4 text-md-end">
-                    <a href="{{ url_for('about') }}" class="me-3"><i class="fas fa-graduation-cap me-1"></i>Education Portal</a>
-                    <a href="https://github.com" target="_blank"><i class="fab fa-github me-1"></i>GitHub</a>
+
+                <!-- Quick Links Column -->
+                <div class="col-md-2 col-6">
+                    <h6 class="fw-bold text-info mb-3 text-uppercase small letter-spacing-2">Navigation</h6>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="{{ url_for('index') }}" class="footer-link"><i class="fas fa-chevron-right me-1 small"></i>Scanner</a></li>
+                        <li><a href="{{ url_for('dashboard') }}" class="footer-link"><i class="fas fa-chevron-right me-1 small"></i>Dashboard</a></li>
+                        <li><a href="{{ url_for('history') }}" class="footer-link"><i class="fas fa-chevron-right me-1 small"></i>History</a></li>
+                        <li><a href="{{ url_for('about') }}" class="footer-link"><i class="fas fa-chevron-right me-1 small"></i>About</a></li>
+                        <li><a href="{{ url_for('contact') }}" class="footer-link"><i class="fas fa-chevron-right me-1 small"></i>Contact</a></li>
+                    </ul>
                 </div>
+
+                <!-- Developer Info Column -->
+                <div class="col-md-3 col-6">
+                    <h6 class="fw-bold text-info mb-3 text-uppercase small letter-spacing-2">Developer</h6>
+                    <ul class="list-unstyled d-flex flex-column gap-2 text-secondary small">
+                        <li><i class="fas fa-user me-2 text-info"></i>Ghanchi Mohammadzaid Inayatbhai</li>
+                        <li><i class="fas fa-university me-2 text-info"></i>Shree K. J. Polytechnic, Bharuch</li>
+                        <li><i class="fas fa-code-branch me-2 text-info"></i>Computer Engineering — Sem 5</li>
+                        <li><i class="fas fa-graduation-cap me-2 text-info"></i>GTU SBTP 2026</li>
+                    </ul>
+                </div>
+
+                <!-- Tech Stack Column -->
+                <div class="col-md-3">
+                    <h6 class="fw-bold text-info mb-3 text-uppercase small letter-spacing-2">Built With</h6>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="footer-tech-badge"><i class="fab fa-python me-1"></i>Python</span>
+                        <span class="footer-tech-badge"><i class="fas fa-flask me-1"></i>Flask</span>
+                        <span class="footer-tech-badge"><i class="fas fa-brain me-1"></i>ML</span>
+                        <span class="footer-tech-badge"><i class="fab fa-html5 me-1"></i>HTML5</span>
+                        <span class="footer-tech-badge"><i class="fab fa-css3-alt me-1"></i>CSS3</span>
+                        <span class="footer-tech-badge"><i class="fab fa-js me-1"></i>JavaScript</span>
+                        <span class="footer-tech-badge"><i class="fab fa-bootstrap me-1"></i>Bootstrap</span>
+                        <span class="footer-tech-badge"><i class="fab fa-github me-1"></i>GitHub</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom Bar -->
+            <div class="footer-bottom mt-4 pt-4 d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+                <p class="mb-0 text-secondary small">
+                    &copy; 2026 PhishGuard &mdash; All Rights Reserved
+                </p>
+                <p class="mb-0 text-secondary small text-center">
+                    <i class="fas fa-code me-1 text-info"></i>
+                    Developed by <strong class="text-info">Ghanchi Mohammadzaid Inayatbhai</strong>
+                    &nbsp;|&nbsp; GTU Skill-Based Training Program (SBTP) 2026
+                </p>
+                <p class="mb-0 text-secondary small">
+                    <i class="fas fa-shield-alt me-1 text-info"></i>Cybersecurity Project
+                </p>
             </div>
         </div>
     </footer>

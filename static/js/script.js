@@ -615,4 +615,161 @@ document.addEventListener('DOMContentLoaded', () => {
             scanForm.dispatchEvent(new Event('submit'));
         }, 100);
     }
+
+    // ----------------------------------------------------
+    // Scroll To Top Button
+    // ----------------------------------------------------
+    const scrollTopBtn = document.getElementById('scroll-top-btn');
+    if (scrollTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    // ----------------------------------------------------
+    // Star Rating System (works for all rating widgets)
+    // ----------------------------------------------------
+    function initStarRating(containerId, hiddenInputId) {
+        const container = document.getElementById(containerId);
+        const hiddenInput = document.getElementById(hiddenInputId);
+        if (!container || !hiddenInput) return;
+
+        const stars = container.querySelectorAll('.star');
+
+        stars.forEach((star) => {
+            star.addEventListener('mouseenter', () => {
+                const val = parseInt(star.dataset.value);
+                stars.forEach((s) => {
+                    s.classList.toggle('active', parseInt(s.dataset.value) <= val);
+                });
+            });
+
+            star.addEventListener('mouseleave', () => {
+                const currentVal = parseInt(hiddenInput.value) || 0;
+                stars.forEach((s) => {
+                    s.classList.toggle('active', parseInt(s.dataset.value) <= currentVal);
+                });
+            });
+
+            star.addEventListener('click', () => {
+                const val = star.dataset.value;
+                hiddenInput.value = val;
+                stars.forEach((s) => {
+                    s.classList.toggle('active', parseInt(s.dataset.value) <= parseInt(val));
+                });
+            });
+        });
+    }
+
+    initStarRating('rating-stars', 'fb-rating');
+    initStarRating('contact-rating-stars', 'ct-rating');
+
+    // ----------------------------------------------------
+    // Generic Feedback Form Submission Handler
+    // ----------------------------------------------------
+    async function handleFeedbackSubmit(nameId, ratingId, messageId, submitBtnId) {
+        const name    = document.getElementById(nameId)?.value.trim();
+        const rating  = document.getElementById(ratingId)?.value;
+        const message = document.getElementById(messageId)?.value.trim();
+        const btn     = document.getElementById(submitBtnId);
+
+        if (!name || !message) {
+            showToast('Validation Error', 'Please fill in your name and message.', 'warning');
+            return false;
+        }
+
+        if (btn) {
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
+        }
+
+        try {
+            const response = await fetch('/api/feedback', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, rating, message }),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                showToast('Thank You!', data.success || 'Feedback submitted successfully.', 'success');
+                // Clear fields
+                document.getElementById(nameId).value = '';
+                document.getElementById(messageId).value = '';
+                document.getElementById(ratingId).value = '';
+                // Reset stars
+                const starsContainerId = nameId === 'fb-name' ? 'rating-stars' : 'contact-rating-stars';
+                document.querySelectorAll(`#${starsContainerId} .star`).forEach(s => s.classList.remove('active'));
+            } else {
+                showToast('Error', data.error || 'Failed to submit feedback.', 'error');
+            }
+        } catch (err) {
+            console.error(err);
+            showToast('Connection Error', 'Could not reach the server.', 'error');
+        } finally {
+            if (btn) {
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fas fa-paper-plane me-2"></i>Submit Feedback';
+            }
+        }
+
+        return true;
+    }
+
+    // About page feedback form
+    const feedbackForm = document.getElementById('feedback-form');
+    if (feedbackForm) {
+        feedbackForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            await handleFeedbackSubmit('fb-name', 'fb-rating', 'fb-message', 'fb-submit-btn');
+        });
+    }
+
+    // Contact page feedback form
+    const contactFeedbackForm = document.getElementById('contact-feedback-form');
+    if (contactFeedbackForm) {
+        contactFeedbackForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const submitted = await handleFeedbackSubmit('ct-name', 'ct-rating', 'ct-message', 'ct-submit-btn');
+            if (submitted) {
+                const btn = document.getElementById('ct-submit-btn');
+                if (btn) btn.innerHTML = '<i class="fas fa-paper-plane me-2"></i>Send Message';
+            }
+        });
+    }
+
+    // ----------------------------------------------------
+    // FAQ Accordion
+    // ----------------------------------------------------
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const targetId = btn.dataset.target;
+            const answer   = document.getElementById(targetId);
+            const isOpen   = btn.classList.contains('open');
+
+            // Close all open answers
+            faqQuestions.forEach((q) => {
+                q.classList.remove('open');
+                const tId = q.dataset.target;
+                const ans = document.getElementById(tId);
+                if (ans) ans.classList.remove('open');
+            });
+
+            // If it wasn't open, open it
+            if (!isOpen) {
+                btn.classList.add('open');
+                if (answer) answer.classList.add('open');
+            }
+        });
+    });
 });
